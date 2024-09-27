@@ -3,10 +3,6 @@
 
 
 .navbar{
-    position: fixed !important; /* Fixed position */
-    top: 0;         /* Align to the top */
-    right: 0;       /* Extend to the right */
-    z-index: 200;   /* Ensure it is above the sidebar */
     background-color: #d6cdcd; /* Background color */
     width: 100%;
     transition: all 0.5s ease;

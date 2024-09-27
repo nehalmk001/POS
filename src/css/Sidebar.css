@@ -30,14 +30,9 @@
 
 
 #sidebar {
-  position: fixed; /* Fixed position */
-  top: 0;
-  left: 0;
-  height: 100vh; /* Full height of the viewport */
   width: 200px;   /* Fixed width */
   background: #ffffff;
   transition: all 0.5s ease;
-  z-index: 100;   /* Ensure it appears above other content */
 }
 .logo{
     /* animation: animate 10s linear infinite; */
@@ -66,7 +61,9 @@
     display: block;
 }
 
-
+/* #sidebar.active{               
+    margin-left: -200px;
+} */
 
 
   .side-link .collapse li {
