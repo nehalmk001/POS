@@ -1,14 +1,20 @@
 import React from 'react'
 import "../css/Sidebar.css"
+import { IoMdArrowDropdown } from "react-icons/io";
+import { FaChartSimple } from "react-icons/fa6";
+import { IoPerson } from "react-icons/io5";
+import { FaShoppingCart } from "react-icons/fa";
+import { IoSettingsSharp } from "react-icons/io5";
+import { MdMessage } from "react-icons/md";
+import { IoMdAddCircle } from "react-icons/io";
 
 const Sidebar = () => {
   return (
-    <div>
+ 
 
 <nav id="sidebar" className="active">
-    {" "}
     {/*sidebar collapse*/}
-    <div className="sidebar-header bg-white">
+    <div className="sidebar-header">
       <h3 className="text-center logo">ItemPOS</h3>
     </div>
     <ul className="list-unstyled components side-link">
@@ -17,7 +23,7 @@ const Sidebar = () => {
           <span>
             {" "}
             {/*sidebar 2 link*/}
-            <i className="fa-solid fa-chart-simple" />
+            <FaChartSimple />
           </span>
           Overview
         </a>
@@ -25,7 +31,7 @@ const Sidebar = () => {
       <li>
         <a style={{ textDecoration: "none" }} href="">
           <span>
-            <i className="fa-solid fa-user" />
+          <IoPerson />
           </span>
           Customers
         </a>
@@ -33,7 +39,7 @@ const Sidebar = () => {
       <li>
         <a style={{ textDecoration: "none" }} href="">
           <span>
-            <i className="fa-solid fa-cart-shopping" />
+          <FaShoppingCart />
           </span>
           Orders
         </a>
@@ -41,16 +47,16 @@ const Sidebar = () => {
       <li className="active settings-sub">
         <a style={{ textDecoration: "none" }} href="#" id="settingsDropdown">
           <span>
-            <i className="fa-solid fa-gear" />
+          <IoSettingsSharp />
           </span>
           Settings
-          <i className="fa-solid fa-caret-down m-2 dropdownicon" />
+          <IoMdArrowDropdown />
         </a>
         <ul className="collapse list-unstyled" id="settingsMenu">
           <li>
             <a style={{ fontSize: "1em" }} href="#">
               <span>
-                <i className="fa-solid fa-square-plus" />
+              <IoMdAddCircle />
               </span>
               Add Product
             </a>
@@ -60,7 +66,7 @@ const Sidebar = () => {
       <li>
         <a style={{ textDecoration: "none" }} href="">
           <span>
-            <i className="fa-solid fa-message" />
+          <MdMessage />
           </span>
           Messages
         </a>
@@ -68,7 +74,6 @@ const Sidebar = () => {
     </ul>
   </nav>
 
-    </div>
   )
 }
 

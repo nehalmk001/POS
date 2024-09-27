@@ -3,13 +3,11 @@ import "../css/Footer.css"
 
 const Footer = () => {
   return (
-    <div>
 
-<div class="footer ">
+<div className="footer ">
             <p>Itempos 2024 ©pinntech infosolutions </p>
         </div>
 
-    </div>
   )
 }
 
