@@ -1,0 +1,121 @@
+
+.side-link  li a {
+    font-size: 1.1em;
+    color: black;
+    text-decoration: none;
+    border-left: 4px solid transparent;
+    line-height: 50px;
+}
+
+
+
+
+.side-link li a span {
+    margin-right: 10px; /* Space between the icon and text */
+}
+
+.side-link li a i {
+    font-size: 1.2em;
+    margin-left: 40px; /* Adjust the size of the icons */
+}
+
+/* Hover effect */
+.side-link li a:hover {
+   background-color: #ebfaf1!important;
+    transition: 0.5s;
+    color: #2bc46e !important ;
+    border-left-color: #2bc46e ;
+}
+
+
+
+#sidebar {
+  position: fixed; /* Fixed position */
+  top: 0;
+  left: 0;
+  height: 100vh; /* Full height of the viewport */
+  width: 200px;   /* Fixed width */
+  background: #ffffff;
+  transition: all 0.5s ease;
+  z-index: 100;   /* Ensure it appears above other content */
+}
+.logo{
+    /* animation: animate 10s linear infinite; */
+    background: linear-gradient(135deg,#13be59 0%, #11bc49 9%,#67cf74 36%,#71d175 60%,#afeaa2 78%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent !important;
+
+}
+#sidebar .side-link li{
+  height: auto;
+}
+
+
+#sidebar .sidebar-header {
+    padding: 20px;
+}
+#sidebar ul li{
+  margin-top: 15px;
+}
+#sidebar ul .settings-sub li{
+  margin-top: 0;
+}
+
+#sidebar ul li a{
+    font-size: 1.0em;
+    display: block;
+}
+
+
+
+
+  .side-link .collapse li {
+    background-color: #ffffff;
+  }
+  
+  .side-link .collapse li a {
+    cursor: pointer; /* Indicate that the item is clickable */
+    text-align: center;
+    font-size: 0.1em;
+  }
+  
+  .side-link .collapse li a:hover {
+    background-color: #dbdbdb!important;
+     transition: 0.5s;
+     color: #2bc46e !important ;
+     border-left-color: #2bc46e ;
+  }
+  
+  /* Hover effect for the Settings */
+  #settingsDropdown:hover, #settingsDropdown.active {
+    background-color: #ebfaf1!important;
+      transition: 0.5s;
+      color: #2bc46e !important ;
+      border-left-color: #2bc46e ;
+  }
+  
+  /* Initially hidden dropdown */
+  #settingsMenu {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: height 0.5s ease, opacity 0.5s ease !important;
+  }
+  
+  /* When dropdown is shown */
+  #settingsMenu.show {
+    height: auto;
+    opacity: 1;
+    transition: 0.5s; 
+  }
+  /* Default state of the dropdown icon */
+.dropdownicon {
+  transition: transform 0.5s ease; /* **Smooth transition for rotation** */
+}
+
+/* When the dropdown is open, rotate the icon 180 degrees */
+.rotate {
+  transform: rotate(180deg);
+}
+
+

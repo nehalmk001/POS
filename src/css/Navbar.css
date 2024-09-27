@@ -1,0 +1,94 @@
+
+/* navbar */
+
+
+.navbar{
+    position: fixed !important; /* Fixed position */
+    top: 0;         /* Align to the top */
+    right: 0;       /* Extend to the right */
+    z-index: 200;   /* Ensure it is above the sidebar */
+    background-color: #d6cdcd; /* Background color */
+    width: 100%;
+    transition: all 0.5s ease;
+    height: auto;
+    padding: 0px !important;
+  }
+  .nav-content{
+    padding: 5px;
+  }
+  
+  .search-container {
+      display: flex;
+      justify-content: center;
+      /* width: 100%; */
+  }
+  
+  .input-group { 
+      position: relative; /* __Added relative positioning to the input-group__ */
+  }
+  
+  .input-group .form-control {
+      padding-right: 15px; /* __Added padding to make space for the icon__ */
+      background-color: #F9F9F9;
+      border: none;
+      font-size: 14px;
+  }
+  .input-group .form-control::-webkit-input-placeholder {
+      color: black; /*Change the placeholder color*/
+      opacity: 0.4; /*Change the opacity between 0 and 1*/
+  }
+  
+  .search-icon {
+      position: absolute; 
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%)!important;
+      border: none !important;
+      background: transparent !important;
+      opacity: 0.4 !important;
+  }
+  
+  .navbar button{
+    padding: 0;
+      border: none;
+      background-color: transparent;
+  }
+  .navbar button:hover i{
+      color: blue;
+  }
+  .nav-icons button{
+    color: #000;
+    cursor: pointer;
+    background-color: transparent !important;
+  }
+  .nav-icons{
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .navbar-brand i {
+      transition: transform 0.3s ease, color 0.3s;
+  }
+  
+  .navbar-brand i.fa-bars {
+      transform: rotate(0deg);
+      color: #000;
+  }
+  
+  .navbar-brand i.fa-xmark {
+      transform: rotate(90deg);
+      color: #000;
+  }
+  
+  .navbar-nav .dropdown-menu {
+    position:absolute !important;
+      width: auto; /* Ensure it adjusts based on content */
+      min-width: 20px;
+      text-align: center;
+    }
+    .navbar-nav ul li a:hover{
+      background-color: blue;
+    }
+ 
+  
