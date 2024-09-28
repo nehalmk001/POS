@@ -14,11 +14,6 @@
     margin-right: 10px; /* Space between the icon and text */
 }
 
-.side-link li a i {
-    font-size: 1.2em;
-    margin-left: 40px; /* Adjust the size of the icons */
-}
-
 /* Hover effect */
 .side-link li a:hover {
    background-color: #ebfaf1!important;
@@ -59,6 +54,7 @@
 #sidebar ul li a{
     font-size: 1.0em;
     display: block;
+    padding-left: 10%;
 }
 
 /* #sidebar.active{               

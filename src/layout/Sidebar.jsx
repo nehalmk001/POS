@@ -21,7 +21,6 @@ const Sidebar = () => {
       <li>
         <a style={{ textDecoration: "none" }} href="#">
           <span>
-            {" "}
             {/*sidebar 2 link*/}
             <FaChartSimple />
           </span>

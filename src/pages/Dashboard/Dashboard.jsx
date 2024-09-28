@@ -3,14 +3,17 @@ import Navbar from '../../layout/Navbar'
 import Sidebar from '../../layout/Sidebar'
 import Footer from '../../layout/Footer'
 import '../../css/Dashboard.css'
+import { IoMail } from "react-icons/io5";
 
 const Dashboard = () => {
+
+  
   return (
    
   
 
-<div className="wrapper">
-  <div className="row">
+<div className="container-fluid wrapper">
+  <div className="row p-0 m-0">
   <div className="col-2 p-0">
     <Sidebar/>
   </div>
@@ -41,7 +44,7 @@ const Dashboard = () => {
                       
                            <div className="email-col">
                               <div className="first-icon orange">
-                                <i className="fa-duotone fa-solid fa-envelope"/>
+                              <IoMail />
                               </div>
                           
                           <div className="first-text">
@@ -59,7 +62,7 @@ const Dashboard = () => {
 
                         <div className="reg-col">
                           <div className="first-icon violet">
-                            <i className="fa-duotone fa-solid fa-envelope"/>
+                          <IoMail />
                           </div>
                       
                       <div className="first-text">
@@ -76,7 +79,7 @@ const Dashboard = () => {
                       <div className="col first-main">
                         <div className="branch-col">
                           <div className="first-icon green">
-                            <i className="fa-duotone fa-solid fa-envelope"/>
+                          <IoMail />
                           </div>
                       
                       <div className="first-text">
@@ -92,7 +95,7 @@ const Dashboard = () => {
                       <div className="col first-main">
                         <div className="item-col">
                           <div className="first-icon cream">
-                            <i className="fa-duotone fa-solid fa-envelope"/>
+                          <IoMail />
                           </div>
                       
                       <div className="first-text">
@@ -118,7 +121,7 @@ const Dashboard = () => {
                         
                         <div className="col second-sub">
                           <div className="total-1 d-flex justify-content-between align-items-center">
-                            <i className="fa-duotone fa-solid fa-envelope"/>
+                          <IoMail />
                             <p>Total Points </p>
                             <span>300</span>
                           </div>
@@ -136,7 +139,7 @@ const Dashboard = () => {
                         
                         <div className="col second-sub">
                           <div className="total-1 d-flex justify-content-between align-items-center">
-                            <i className="fa-duotone fa-solid fa-envelope"/>
+                          <IoMail />
                             <p>Total Points </p>
                             <span>300</span>
                           </div>
@@ -154,7 +157,7 @@ const Dashboard = () => {
                         
                         <div className="col second-sub">
                           <div className="total-1 d-flex justify-content-between align-items-center">
-                            <i className="fa-duotone fa-solid fa-envelope"/>
+                          <IoMail />
                             <p>Total Points </p>
                             <span>300</span>
                           </div>
@@ -180,7 +183,7 @@ const Dashboard = () => {
 
               {/* <!-- third coloumn --> */}
 
-              <div className="col col-4 d-flex flex-column justify-content-center">
+              <div className="col col-4 d-flex flex-column">
 
                 <div className="profile">
 
@@ -195,11 +198,11 @@ const Dashboard = () => {
                   </div>
 
                   <div className="profile2 d-flex">
-                    <div className="profile2-1">
+                   
                       <div className="profile-i-color">
-                        <i className="fa-duotone fa-solid fa-envelope"/>
+                      <IoMail />
                       </div>
-                    </div>
+                  
           
                     <div className="profile2-2">
                       <h4>birthday</h4>
@@ -208,12 +211,12 @@ const Dashboard = () => {
                   </div>
 
                   <div className="profile3 d-flex">
-                    <div className="profile3-1">
+                   
                      
                       <div className="profile-i-color">
-                        <i className="fa-duotone fa-solid fa-envelope"/>
+                      <IoMail />
                       </div>
-                    </div>
+                   
           
                     <div className="profile3-2">
                       <h4>birthday</h4>

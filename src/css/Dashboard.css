@@ -1,3 +1,7 @@
+.wrapper{
+  padding: 0;
+  margin: 0;
+}
 
 #content {
     padding: 20px;      /* Padding for content */
@@ -54,10 +58,9 @@
   }
   .orange{
     background-color: #FFE9BC;
+    padding: 0px 10px;
   }
-  .first-icon i{
-   padding: 0 5px;
-  }
+ 
   
   .reg-col{
     padding: 7px 7px;
@@ -67,6 +70,7 @@
   }
   .violet{
     background-color: #E7D1F8;
+    padding: 0px 10px;
   }
   .branch-col{
     padding: 7px 7px;
@@ -76,6 +80,7 @@
   }
   .green{
     background-color: #B1F1CC;
+    padding: 0px 10px;
   }
   
   .item-col{
@@ -86,6 +91,7 @@
   }
   .cream{
     background-color: #F8D4C8;
+    padding: 0px 10px;
   }
   
   /* second */
@@ -94,7 +100,7 @@
   background-color: #ffffff;
   border: none;
   border-radius: 10px;
-  padding: 0px 0px;
+  /* padding: 0px 0px; */
   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
   7px 7px 20px 0px rgba(0,0,0,.1),
   4px 4px 5px 0px rgba(0,0,0,.1);
@@ -108,6 +114,8 @@
   .second-main{
   padding: 10px 10px;
   gap: 10px;
+  display: flex;
+  justify-content: center;
   }
   .second-sub{
   border: 1px solid #E3EBEE;
@@ -215,26 +223,20 @@
     border: 1px solid #F3F3F3;
     border-radius: 6px;
     gap: 15px;
-  }
-  .profile2-1{
     padding: 5px;
-    margin-left: 5px;
   }
   .profile-i-color{
     background-color: #DCEDFF;
-  }
-  .profile2-1 i{
-    height: 26px;
-    width: 26px;
-  }
-  .profile2-2{
-    padding-top: 5px;
+    padding: 0px 5px;
+    display: flex;
+    align-items: center;
   }
   .profile3{
     background-color: #ffffff;
     border: 1px solid #F3F3F3;
     border-radius: 6px;
     gap: 15px;
+    padding: 5px;
   }
   
   
@@ -249,8 +251,8 @@
   }
   .profile2 .profile2-2 h5{
     font-size: 10px;
-    margin-bottom: 0;
     padding: 0;
+    margin-bottom: 0;
   }
   
   .profile3 .profile3-2 h4{
@@ -260,8 +262,8 @@
   }
   .profile3 .profile3-2 h5{
     font-size: 10px;
-    margin-bottom: 0;
     padding: 0;
+    margin-bottom: 0;
   }
   
   .profile3-1{
@@ -272,9 +274,7 @@
     height: 26px;
     width: 26px;
   }
-  .profile3-2{
-    padding-top: 5px;
-  }
+ 
   
   
   

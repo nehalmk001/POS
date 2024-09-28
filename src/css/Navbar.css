@@ -5,7 +5,7 @@
 .navbar{
     background-color: #d6cdcd; /* Background color */
     width: 100%;
-    height: auto;
+    /* height: auto; */
     padding: 0px !important;
   }
   .nav-content{
