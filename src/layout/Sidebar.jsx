@@ -44,12 +44,15 @@ const Sidebar = () => {
         </a>
       </li>
       <li className="active settings-sub">
-        <a style={{ textDecoration: "none" }} href="#" id="settingsDropdown">
+        <a className='d-flex' style={{ textDecoration: "none" }} href="#" id="settingsDropdown">
           <span>
           <IoSettingsSharp />
           </span>
           Settings
-          <IoMdArrowDropdown />
+          <div className='dropdownicon'>
+            <IoMdArrowDropdown />
+            </div>
+
         </a>
         <ul className="collapse list-unstyled" id="settingsMenu">
           <li>

@@ -7,7 +7,9 @@
     line-height: 50px;
 }
 
-
+.side-link{
+  margin-top: 5%;
+}
 
 
 .side-link li a span {
@@ -42,7 +44,7 @@
 
 
 #sidebar .sidebar-header {
-    padding: 20px;
+    padding: 20px 0px;
 }
 #sidebar ul li{
   margin-top: 15px;
@@ -104,6 +106,7 @@
   /* Default state of the dropdown icon */
 .dropdownicon {
   transition: transform 0.5s ease; /* **Smooth transition for rotation** */
+  margin-left: 5px;
 }
 
 /* When the dropdown is open, rotate the icon 180 degrees */
