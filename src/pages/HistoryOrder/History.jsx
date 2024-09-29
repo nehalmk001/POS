@@ -1,31 +1,36 @@
 import React from 'react'
 import '../../css/Orders.css'
-import Navbar from '../../layout/Navbar'
-import Sidebar from '../../layout/Sidebar'
-import Footer from '../../layout/Footer'
-import Table from '../../Components/Table/Table'
+import Table from '../../Components/Table/Table';
+import Navbar from '../../layout/Navbar';
+import Sidebar from '../../layout/Sidebar';
+import Footer from '../../layout/Footer';
 import  orders from '../../assets/order.jpg'
 
 
-const Orders = () => {
-  const headers = [
-    { label: 'ID', width: '15%' },
+const headers = [
+    { label: 'Cust ID', width: '15%' },
+    { label: 'Date', width: '40%' },
     { label: 'Product', width: '40%' },
-    { label: 'Category', width: '40%' },
     { label: 'Quantity', width: '30%' },
-    { label: 'Brand', width: '40%' },
-    { label: 'Price', width: '30%' }
+    { label: 'price', width: '40%' },
+    { label: 'invoice id', width: '30%' },
+    { label: 'Payment Mode', width: '30%' }
   ];
-  
+
   const data = [
-    ['001', 'Laptop', 'Electronics', '1', 'Apple', '$1200'],
-    ['002', 'Smartphone', 'Electronics', '2', 'Samsung', '$800'],
-    ['003', 'Tablet', 'Electronics', '3', 'Google', '$400'],
-    // Add more rows as needed
+    ['C001', '2024-09-01', 'Laptop', '2', '$2400', 'INV1001', 'Credit Card'],
+    ['C002', '2024-09-02', 'Smartphone', '1', '$800', 'INV1002', 'Debit Card'],
+    ['C003', '2024-09-03', 'Tablet', '3', '$1200', 'INV1003', 'Cash'],
+    ['C004', '2024-09-04', 'Monitor', '4', '$1600', 'INV1004', 'Credit Card'],
+    ['C005', '2024-09-05', 'Keyboard', '5', '$500', 'INV1005', 'PayPal'],
+    ['C006', '2024-09-06', 'Mouse', '10', '$400', 'INV1006', 'Debit Card'],
+    ['C007', '2024-09-07', 'Headphones', '2', '$300', 'INV1007', 'Cash'],
+    ['C008', '2024-09-08', 'Smartwatch', '1', '$200', 'INV1008', 'Credit Card'],
+    ['C009', '2024-09-09', 'Camera', '1', '$1500', 'INV1009', 'PayPal'],
+    ['C010', '2024-09-10', 'Printer', '2', '$600', 'INV1010', 'Debit Card'],
   ];
   
-
-
+const History = () => {
   return (
     <div className='grid-container'>
       <Navbar />
@@ -84,9 +89,9 @@ const Orders = () => {
         </div>
       </div>
 
-      <Footer />
+      <Footer/>
     </div>
   )
 }
 
-export default Orders
+export default History

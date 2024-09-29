@@ -15,193 +15,21 @@
         transition: grid-template-columns 0.3s ease; /* Transition for the grid */
     }
     
-    
-    .grid-container #sidebar.active {
-        grid-template-columns: 0 1fr 1fr 1fr 1fr 1fr; /* Adjust grid columns when sidebar is collapsed */
-    }
-    
-    
-    .order-window.collapsed {
-        display: none ;
-    }
-    .order-window.collapsed + .expand-btn {
-        display: flex; /* Show expand button when order window is collapsed */
-        justify-content: end;
-        position: absolute;
-        right: 20px;
-        bottom: 10px;
-        z-index: 999; /* Ensure it's on top */
-    }
-    
-    .grid-container .order-window.collapsed {
-        grid-template-areas: 
-            'side-nav navbar navbar navbar navbar navbar'
-            'side-nav main main main main main'
-            'side-nav footer footer footer footer footer';
-    }
-    
-    .side-nav,
-    .order-window{
-        height: 600px;
-    
-    }
-    
     .footer{
         grid-area: footer;
-        background-color: #fffdfd;
-        
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      
     }
-    
-    @media (max-width: 600px) {
-        .grid-container  {
-          grid-template-areas: 
-            'navbar navbar navbar navbar navbar navbar' 
-            'side-nav side-nav side-nav side-nav side-nav side-nav' 
-            'main main main main main main' 
-            'order-window order-window order-window order-window order-window order-window' 
-            'footer footer footer footer footer footer';
-        }
-        body{
-            overflow: auto;
-        }
-        .table{
-            overflow-x: auto;
-        }
-        .expand-btn{
-            display: none;
-        }
-    
-        .collapse-btn{
-            display: none;
-        }
-      }
-    
-    
-    /* sidebar style */
+
     .side-nav{
         grid-area: side-nav;
     }
-    .dropdownicon {
-        transition: transform 0.5s ease; /* **Smooth transition for rotation** */
-      }
-      
-      /* When the dropdown is open, rotate the icon 180 degrees */
-      .rotate {
-        transform: rotate(180deg);
-      }
-    
-    .side-link li a {
-        font-size: 1.0em;
-        color: black;
-        text-decoration: none;
-        border-left: 4px solid transparent;
-        line-height: 50px;
-    }
-    .side-link li a span {
-        margin-right: 10px; /* Space between the icon and text */
-    }
-    
-    .side-link li a i {
-        font-size: 1.2em;
-        margin-left: 50px; /* Adjust the size of the icons */
-    }
-    
-    /* Hover effect */
-    .side-link li a:hover {
-       background-color: #ebfaf1!important;
-        transition: 0.5s;
-        color: #2bc46e !important ;
-        border-left-color: #2bc46e ;
-    }
-    
-    
-    #sidebar {
-        min-width: 200px !important;
-        max-width: 200px !important;
-        background: white;
-        transition: max-width 0.3s ease, min-width 0.3s ease; /* Smooth transition */
-    }
-    
-    #sidebar.active {
-        max-width: 0; /* Hides the sidebar */
-        min-width: 0;
-        overflow: hidden; /* Ensures content is hidden when collapsed */
-    }
-    
-    
-    .logo{
-        animation: animate 10s linear infinite;
-        background: linear-gradient(135deg,#13be59 0%, #11bc49 9%,#67cf74 36%,#71d175 60%,#afeaa2 78%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color:transparent !important;
-    }
-    
-    
-    #sidebar .sidebar-header {
-        padding: 20px;
-    }
-    
-    #sidebar ul li a {
-        padding: 10px 2px;
-       
-        display: block;
-    }
-    
-    
-    /* navbar */
-    
+
     .navbar{
         grid-area: navbar;
       background-color: #ffffff;
       text-align: center;
     }
-    
-    .navbar button{
-     border: none;
-     background-color: transparent;
-    }
-    
-    .search-container {
-        display: flex;
-        justify-content: center;
-        /* width: 100%; */
-    }
-    
-    .input-group { 
-        position: relative; /* __Added relative positioning to the input-group__ */
-    }
-    
-    .input-group .form-control {
-        padding-right: 40px; /* __Added padding to make space for the icon__ */
-        background-color: #F9F9F9;
-        border: none;
-    }
-    .input-group .form-control::-webkit-input-placeholder {
-        color: black; /*Change the placeholder color*/
-        opacity: 0.4; /*Change the opacity between 0 and 1*/
-    }
-    
-    .search-icon {
-        position: absolute; 
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%)!important;
-        border: none !important;
-        background: transparent !important;
-        opacity: 0.4 !important;
-    }
-    .navbar-nav .dropdown-menu{
-        width: auto;
-        min-width: 50px;
-        text-align: center;
-        position: absolute!important;
-    }
-    
-    /* main content style */
+
+
     .main{
         padding: 20px 50px;
         background-color: #f7f8fc;
@@ -267,73 +95,18 @@
     }
     
     /* table */
-    .table-container {
-        border: 1px solid #2bc46e ;
-        width: 100%;
-        margin-top: 10px;
-        max-height: 475px;
-        min-height: 475px;
-        border-radius: 10px;
-        overflow: hidden;
-        position: relative;
+    .table-container{
+        border: 1px solid #2bc46e;
+  width: 100%;
+  margin-top: 10px;
+  min-height: 475px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
     }
-    
-    .table {
-        width: 100%;
-        box-sizing: border-box;
-        max-height: 473px;
-        font-size: 14px;
-        display: flex;
-        flex-direction: column;
-        overflow-y: auto;
-        overflow-x: hidden;
-       
-        
-    }
-    
-    .datas:hover {
-        background-color:#ebfaf1;
-        color: #2bc46e;
-        cursor: pointer;
-    }
-    
-    .header {
-        font-weight: bold;
-        padding: 10px 0;
-    }
-    
-        .column{
-            padding: 10px;
-            border-bottom: 2px solid #ddd;
-            box-sizing: border-box;
-            font-size: 12px;
-            margin: 0;
-           text-align: center;
-           
-        }
-    
-    .row.header {
-        position: sticky;
-        text-align: center;
-        top: 0;
-        background-color: #f1f1f1;
-        z-index: 1;
-        padding-left: 14px;
-        border-bottom: 2px solid #ddd;
-    }
-    
-    
-    /* order console style here */
-    .hidden {
-        display: none!important;
-    }
-    .collapse-btn{
-        position: absolute;
-        z-index: 999;
-        left: 20px;
-        top: 16px;  
-    }
-    
+      
+
+    /* ----------------------------------------------------order window style here-------------------------------------------------------------> */
     .order-window{
         grid-area: order-window;
         height: 100%;
@@ -391,29 +164,6 @@
     
     
     
-    .confirm-btn-container {
-        position: sticky;
-        bottom: 0;
-        width: 100%;
-        margin-bottom: 0;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        background-color: white;
-    
-    }
-    .cancel-btn{
-        background-color: transparent;
-        border: none;
-        padding: 4px;
-        cursor: pointer;
-        color: #2bc46e;
-    }
-    
-    .cancel-btn .material-symbols-outlined{
-    font-size: 31px;
-    margin-top: 8px;
-    }
     
     .confirm-btn{
         padding: 5px;
@@ -528,178 +278,3 @@
     .order-details p{
         margin-top: 5px;
     }
-    
-    .dropcollapse {
-        height: 0;
-        opacity: 0;
-        overflow: hidden;
-        transition: height 0.5s ease, opacity 0.5s ease;
-    }
-    
-    .dropcollapse.show {
-        height: auto;
-        opacity: 1;
-    }
-    
-      .side-link .dropcollapse li {
-        background-color: #ffffff;
-      }
-      
-      .side-link .dropcollapse li a {
-        cursor: pointer; /* Indicate that the item is clickable */
-        text-align: center;
-        font-size: 0.1em;
-      }
-      
-      .side-link .dropcollapse li a:hover {
-        background-color: #dbdbdb!important;
-         transition: 0.5s;
-         color: #2bc46e !important ;
-         border-left-color: #2bc46e ;
-      }
-      
-      /* Hover effect for the Settings */
-      #settingsDropdown:hover, #settingsDropdown.active {
-        background-color: #ebfaf1!important;
-          transition: 0.5s;
-          color: #2bc46e !important ;
-          border-left-color: #2bc46e ;
-      }
-      
-      /* Initially hidden dropdown */
-      #settingsMenu {
-        height: 0;
-        opacity: 0;
-        overflow: hidden;
-        transition: height 0.5s ease, opacity 0.5s ease;
-      }
-      
-      /* When dropdown is shown */
-      #settingsMenu.show {
-        height: auto;
-        opacity: 1;
-      }
-    
-     /* navlink active on off style here */
-    
-      /* Default styles for all links */
-    .nav-link {
-        color: black!important;
-        text-decoration: none; 
-        font-size: 12px;
-        padding: 0 10px; 
-    }
-    
-    /* Active link and on focus styles */
-    .nav-link.active {
-        color: #2bc46e !important;
-        background-color: #ebfaf1;
-        border-radius: 4px;
-        border:1px solid  #2bc46e;
-      
-    }
-    
-    /* Inactive links (this will be the default unless a link has the active class) */
-    .nav-link {
-        color: black;
-    }
-    
-    
-    .side.active{
-        background-color: #2bc46e; /* Example background for active links */
-        color: white; /* Change text color for active link */
-       
-    }
-    
-    
-    /* -----------------------------------------------------------tooltip css-------------------------------------------------------------------------- */
-    
-    .bell-icon{
-        position: relative;
-        display: inline-block;
-       }
-       .tooltiptext-bell {
-        visibility: hidden;
-        width: 100px; /* Increased width for better text fit */
-        background-color: #000;
-        color: #fff;
-        text-align: center;
-        padding: 5px;
-        border-radius: 6px;
-    
-        /* Position the tooltip */
-        position: absolute;
-        z-index: 1;
-        bottom: -160%; /* Positioned above the bell icon */
-        left: 50%;
-        transform: translateX(-50%); /* Center align the tooltip */
-    
-        /* Add transition for a smoother appearance */
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-    
-    .bell-icon:hover .tooltiptext-bell {
-        visibility: visible;
-        opacity: 1;
-    }
-    
-    
-    .avatar{
-        position: relative;
-        display: inline-block;
-       }
-       .tooltiptext-profile {
-        visibility: hidden;
-        width: 75px; /* Increased width for better text fit */
-        background-color: #000;
-        color: #fff;
-        text-align: center;
-        padding: 5px;
-        border-radius: 6px;
-    
-        /* Position the tooltip */
-        position: absolute;
-        z-index: 1;
-        bottom: -160%; /* Positioned above the bell icon */
-        left: 45%;
-        transform: translateX(-50%); /* Center align the tooltip */
-    
-        /* Add transition for a smoother appearance */
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-    
-    .avatar:hover .tooltiptext-profile {
-        visibility: visible;
-        opacity: 1;
-    }
-       
-    
-    /* -----------------------------------------------------------tooltip css-------------------------------------------------------------------------- */
-    /* responsive styles here */
-    
-    @media screen and (min-width: 600px) and (max-width: 1280px) {
-        .grid-container {
-            display: grid;
-            grid-template-columns: 200px 4fr; /* Stack main and order-window as columns */
-            grid-template-rows: 200px 1fr 1fr auto; /* Separate rows for navbar, main, and order-window */
-            height: 100vh;
-            width: 100%;
-            grid-template-areas: 
-                'side-nav navbar'
-                'side-nav main'
-                'side-nav order-window'
-                'side-nav footer';
-            transition: grid-template-columns 0.3s ease; /* Transition for the grid */
-        }
-    
-     .body{
-        height: 100%;
-            overflow-y: auto; 
-     }
-    
-      }
-    
-    
-    
