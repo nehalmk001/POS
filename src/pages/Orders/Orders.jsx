@@ -9,18 +9,18 @@ import  orders from '../../assets/order.jpg'
 
 const Orders = () => {
   const headers = [
-    { label: 'ID', width: '15%' },
-    { label: 'Product', width: '40%' },
-    { label: 'Category', width: '40%' },
-    { label: 'Quantity', width: '30%' },
-    { label: 'Brand', width: '40%' },
-    { label: 'Price', width: '30%' }
+    { label: 'ID', width: '100px' },
+    { label: 'Product', width: '1fr' },
+    { label: 'Category', width: '1fr' },
+    { label: 'Quantity', width: '1fr' },
+    { label: 'Brand', width: '1fr' },
+    { label: 'Price', width: '100px' }
   ];
   
   const data = [
-    ['001', 'Laptop', 'Electronics', '1', 'Apple', '$1200'],
-    ['002', 'Smartphone', 'Electronics', '2', 'Samsung', '$800'],
-    ['003', 'Tablet', 'Electronics', '3', 'Google', '$400'],
+    ['001', 'Laptop', 'Electronics', '10', 'Apple', '$1200'],
+    ['002', 'Smartphone', 'Electronics', '20', 'Samsung', '$800'],
+    ['003', 'Tablet', 'Electronics', '30', 'Google', '$400'],
     // Add more rows as needed
   ];
   
@@ -67,9 +67,7 @@ const Orders = () => {
 
       {/* order window div */}
       <div className="order-window ">
-        <div className="collapse-btn">
-          <img style={{ width: 25 }} src="./images/collapse.png" alt="" />
-        </div>
+        
         <div className="orders">
           <div className="order-list" id="order-list">
             {/* Selected products will be added here */}

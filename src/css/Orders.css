@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     }
     
     .grid-container {
@@ -31,22 +32,13 @@
 
 
     .main{
-        padding: 20px 50px;
+        
         background-color: #f7f8fc;
         grid-area: main;
-     
+        padding: 20px 50px;
     }
     
-    .expand-btn{
-        display: flex;
-        justify-content: end;
-        display: none;
-        cursor: pointer;
-    }
-    
-    .expand-btn img{
-        margin-bottom: 0;
-    }
+   
     
     .search-box{
         margin: 10px auto;
@@ -79,23 +71,9 @@
         color: #999;
         cursor: pointer; /* Optional: adds a pointer effect to the icon */
     }
-    
-    .navbar-brand i {
-        transition: transform 0.3s ease, color 0.3s;
-    }
-    
-    .navbar-brand i.fa-bars {
-        transform: rotate(0deg);
-        color: #000;
-    }
-    
-    .navbar-brand i.fa-xmark {
-        transform: rotate(90deg);
-        color: #000;
-    }
-    
+  
     /* table */
-    .table-container{
+    .table-wrapper{
         border: 1px solid #2bc46e;
   width: 100%;
   margin-top: 10px;
@@ -104,6 +82,25 @@
   overflow: hidden;
   position: relative;
     }
+
+      
+   .header{
+    background-color: #f1f1f1;
+    font-weight: bold;
+   }
+      .header, .row {
+        border-bottom: 1px solid #ddd;
+      }
+
+      .row:hover{
+        background-color:#ebfaf1;
+        color: #2bc46e;
+        cursor: pointer;
+      }
+      
+      
+      
+      
       
 
     /* ----------------------------------------------------order window style here-------------------------------------------------------------> */
