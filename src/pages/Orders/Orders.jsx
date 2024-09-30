@@ -9,8 +9,7 @@ import { IoIosSearch } from "react-icons/io";
 import Navlink from '../../Components/Navlinks/Navlink'
 import Card from 'react-bootstrap/Card';
 import { IoMdClose } from "react-icons/io";
-import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
+
 import { FaPlus,FaMinus } from "react-icons/fa";
 
 import { AiFillDelete } from "react-icons/ai";
@@ -18,20 +17,46 @@ import { AiFillDelete } from "react-icons/ai";
 
 const Orders = () => {
   const headers = [
-    { label: 'ID', width: '100px' },
-    { label: 'Product', width: '1fr' },
-    { label: 'Category', width: '1fr' },
-    { label: 'Quantity', width: '1fr' },
-    { label: 'Brand', width: '1fr' },
-    { label: 'Price', width: '100px' }
+    { label: 'ID', key: 'id', width: '100px' },
+    { label: 'Image', key: 'imageUrl', width: '1fr', render: (imageUrl) => <img src={imageUrl} alt="Product" style={{ width: '50px', height: '50px' }} /> },
+    { label: 'Product', key: 'name', width: '1fr' },
+    { label: 'Category', key: 'category', width: '1fr' },
+    { label: 'Quantity', key: 'quantity', width: '1fr' },
+    { label: 'Brand', key: 'brand', width: '1fr' },
+    { label: 'Price', key: 'price', width: '100px', render: (price) => `$${price.toFixed(2)}` }
   ];
   
   const data = [
-    ['001', 'Laptop', 'Electronics', '10', 'Apple', '$1200'],
-    ['002', 'Smartphone', 'Electronics', '20', 'Samsung', '$800'],
-    ['003', 'Tablet', 'Electronics', '30', 'Google', '$400'],
-    // Add more rows as needed
+    {
+      id: '001',
+      name: 'Laptop',
+      category: 'Electronics',
+      quantity: 10,
+      brand: 'Apple',
+      price: 1200,
+      imageUrl: 'https://bl-i.thgim.com/public/incoming/fk5hrs/article67097604.ece/alternates/FREE_1200/MacBookAir%2015inch_5.JPG'
+    },
+    {
+      id: '002',
+      name: 'Smartphone',
+      category: 'Electronics',
+      quantity: 20,
+      brand: 'Samsung',
+      price: 800,
+      imageUrl: 'https://img.global.news.samsung.com/in/wp-content/uploads/2022/03/SM-A536_Galaxy-A53-5G_Awesome-Peach_Front.jpg'
+    },
+    {
+      id: '003',
+      name: 'Tablet',
+      category: 'Electronics',
+      quantity: 30,
+      brand: 'Google',
+      price: 400,
+      imageUrl: 'https://m.media-amazon.com/images/I/71k+KbTBn5L.jpg'
+    }
+
   ];
+  
   const link = [
     { href: "/orders", eventKey: "orders", label: "Orders" },
     { href: "/history", eventKey: "history", label: "History" },
@@ -40,16 +65,12 @@ const Orders = () => {
 
   const [selectedProduct, setselectedProduct] = useState([])
   
-  const handleRowClick = (rowData) => {
-    const productIndex = selectedProduct.findIndex(product => product.id === rowData[0]);
+  const handleRowClick = (product) => {
+    const productIndex = selectedProduct.findIndex(item => item.id === product.id);
     if (productIndex === -1) {
       const productWithQuantity = {
-        id: rowData[0],
-        name: rowData[1],
-        category: rowData[2],
-        quantity: 1,
-        brand: rowData[4],
-        price: parseFloat(rowData[5].replace('$', '')),
+        ...product, // Spread the product object
+        quantity: 1
       };
       setselectedProduct([...selectedProduct, productWithQuantity]);
     } else {
@@ -58,6 +79,7 @@ const Orders = () => {
       setselectedProduct(updatedProducts);
     }
   };
+  
 
   // Function to increment the quantity
   const incrementQuantity = (productId) => {
@@ -82,6 +104,15 @@ const Orders = () => {
     setselectedProduct(updatedProducts);
   };
 
+  const deleteProduct = (productId) =>{
+      const updatedProducts = selectedProduct.filter(product=>product.id != productId);
+      setselectedProduct(updatedProducts)
+  }
+
+
+  const deleteAllProducts = ()=>{
+    setselectedProduct([]);
+  }
 
 
 
@@ -117,13 +148,13 @@ const Orders = () => {
               selectedProduct.map((product, index) => (
                 <Card key={index} border="success" style={{ width: '20rem', marginBottom: '10px' ,background:' background-color: #ebfaf1'}}>
                   <Card.Header className='d-flex justify-content-end bg-white p-0 m-0' style={{borderBottom:'none' }}>
-                    <div><IoMdClose /></div>
+                    <div><IoMdClose onClick={()=>deleteProduct(product.id)}/></div>
                   </Card.Header>
                   <Card.Body className='m-0 p-0'>
                     <Card.Text>
                       <div className='card-content d-flex justify-content-around'>
-                    <div className='pdt-img'><img src="https://hbkonline.in/pub/media/catalog/product/a/p/apple_fruit_powder3.jpg" style={{width:'66px',height:'66px'}} alt="Product" /></div>
-                     <div className='order-txt'> 
+                    <div className='pdt-img'><img src={product.imageUrl}style={{width:'66px',height:'66px'}} alt="Product" /></div>
+                     <div className='order-txt'>
                      <Card.Title className='title-order mt-0'>{product.name}</Card.Title>
                       <p className='mb-0' style={{fontSize:'14px',marginBottom:'0px'}}>Quantity: {product.quantity}</p>
                       <p className='mb-3'>Price: ${(product.quantity * product.price).toFixed(2)}</p></div>
@@ -145,7 +176,7 @@ const Orders = () => {
           </div>
           <div className='confirm-btn-container d-flex'>
             <button className='confirm-btn'>Confirm</button>
-            <div className='dlt-btn'><AiFillDelete size={26} /></div>
+            <div className='dlt-btn'><AiFillDelete size={26} onClick={deleteAllProducts}/></div>
           </div>
         </div> 
       </div>

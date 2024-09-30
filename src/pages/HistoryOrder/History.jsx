@@ -8,36 +8,37 @@ import  orders from '../../assets/order.jpg'
 import { IoIosSearch } from 'react-icons/io';
 import Navlink from '../../Components/Navlinks/Navlink';
 
+  
+const History = () => {
 
-const headers = [
-    { label: 'Cust ID', width: '15%' },
-    { label: 'Date', width: '40%' },
-    { label: 'Product', width: '40%' },
-    { label: 'Quantity', width: '30%' },
-    { label: 'price', width: '40%' },
-    { label: 'invoice id', width: '30%' },
-    { label: 'Payment Mode', width: '30%' }
+  const historyHeaders = [
+    { label: 'Cust ID', key: 'custId', width: '15%' },
+    { label: 'Date', key: 'date', width: '40%' },
+    { label: 'Product', key: 'product', width: '40%' },
+    { label: 'Quantity', key: 'quantity', width: '30%' },
+    { label: 'Price', key: 'price', width: '40%' },
+    { label: 'Invoice ID', key: 'invoiceId', width: '30%' },
+    { label: 'Payment Mode', key: 'paymentMode', width: '30%' }
   ];
-
-  const data = [
-    ['C001', '2024-09-01', 'Laptop', '2', '$2400', 'INV1001', 'Credit Card'],
-    ['C002', '2024-09-02', 'Smartphone', '1', '$800', 'INV1002', 'Debit Card'],
-    ['C003', '2024-09-03', 'Tablet', '3', '$1200', 'INV1003', 'Cash'],
-    ['C004', '2024-09-04', 'Monitor', '4', '$1600', 'INV1004', 'Credit Card'],
-    ['C005', '2024-09-05', 'Keyboard', '5', '$500', 'INV1005', 'PayPal'],
-    ['C006', '2024-09-06', 'Mouse', '10', '$400', 'INV1006', 'Debit Card'],
-    ['C007', '2024-09-07', 'Headphones', '2', '$300', 'INV1007', 'Cash'],
-    ['C008', '2024-09-08', 'Smartwatch', '1', '$200', 'INV1008', 'Credit Card'],
-    ['C009', '2024-09-09', 'Camera', '1', '$1500', 'INV1009', 'PayPal'],
-    ['C010', '2024-09-10', 'Printer', '2', '$600', 'INV1010', 'Debit Card'],
+  
+  const historyData = [
+    {
+      custId: 'C001',
+      date: '2024-09-01',
+      product: 'Laptop',
+      quantity: 2,
+      price: '$2400',
+      invoiceId: 'INV1001',
+      paymentMode: 'Credit Card'
+    },
+    // More rows...
   ];
 
   const link = [
     { href: "/orders", eventKey: "orders", label: "Orders" },
     { href: "/history", eventKey: "history", label: "History" },
   ]
-  
-const History = () => {
+
   return (
     <div className='grid-container'>
       <Navbar />
@@ -56,7 +57,7 @@ const History = () => {
         </div>
 
         <div className='table-wrapper'>
-          <Table headers={headers} data={data}/>
+          <Table headers={historyHeaders} data={historyData}/>
           </div>
      
       </div>
@@ -67,7 +68,7 @@ const History = () => {
           <img style={{ width: 25 }} src="./images/collapse.png" alt="" />
         </div>
         <div className="orders">
-          <div className="order-list" id="order-list">
+          <div className="orders-list" id="order-list">
             {/* Selected products will be added here */}
             <div className="hide">
               <p className="text-center">Your orders will be displayed here</p>
