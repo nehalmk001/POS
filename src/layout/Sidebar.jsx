@@ -5,7 +5,7 @@ import { FaChartSimple } from "react-icons/fa6";
 import { IoPerson } from "react-icons/io5";
 import { FaShoppingCart } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
-import { MdMessage } from "react-icons/md";
+import { MdDashboard, MdMessage } from "react-icons/md";
 import { IoMdAddCircle } from "react-icons/io";
 
 const Sidebar = () => {
@@ -28,12 +28,12 @@ const Sidebar = () => {
     </div>
     <ul className="list-unstyled components side-link">
       <li>
-        <a style={{ textDecoration: "none" }} href="#">
+        <a style={{ textDecoration: "none" }} href="/">
           <span>
             {/*sidebar 2 link*/}
-            <FaChartSimple />
+            <MdDashboard />
           </span>
-          Overview
+          Dashboard
         </a>
       </li>
       <li>
@@ -45,7 +45,7 @@ const Sidebar = () => {
         </a>
       </li>
       <li>
-        <a style={{ textDecoration: "none" }} href="">
+        <a style={{ textDecoration: "none" }} href="/orders">
           <span>
           <FaShoppingCart />
           </span>

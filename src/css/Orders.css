@@ -97,8 +97,8 @@
       }
 
       .row:hover{
-        background-color:#ebfaf1;
-        color: #2bc46e;
+        /* background-color:#ebfaf1; */
+        /* color: #2bc46e; */
         cursor: pointer;
       }
       
