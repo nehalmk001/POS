@@ -71,6 +71,10 @@
         color: #999;
         cursor: pointer; /* Optional: adds a pointer effect to the icon */
     }
+
+   .nav-tab-link{
+    color: #2bc46e!important;
+   }
   
     /* table */
     .table-wrapper{

@@ -6,6 +6,7 @@ import Footer from '../../layout/Footer'
 import Table from '../../Components/Table/Table'
 import  orders from '../../assets/order.jpg'
 import { IoIosSearch } from "react-icons/io";
+import Navlink from '../../Components/Navlinks/Navlink'
 
 
 const Orders = () => {
@@ -24,6 +25,12 @@ const Orders = () => {
     ['003', 'Tablet', 'Electronics', '30', 'Google', '$400'],
     // Add more rows as needed
   ];
+
+
+  const link = [
+    { href: "/orders", eventKey: "orders", label: "Orders" },
+    { href: "/history", eventKey: "history", label: "History" },
+  ]
   
 
 
@@ -41,23 +48,7 @@ const Orders = () => {
             />
             <div className='search-icon'><IoIosSearch size={20}/></div>
           </div>
-          <ul className="nav justify-content-end">
-            <li className="nav-item ">
-              <a
-                className="nav-link active "
-                aria-current="page"
-                id="show-orders"
-                href="#"
-              >
-                Orders
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link " id="show-history" href="#">
-                History
-              </a>
-            </li>
-          </ul>
+          <div className='nav-tab'><Navlink link={link} defaultActiveKey="/orders"  /></div>
         </div>
 
         <div className='table-wrapper'>
