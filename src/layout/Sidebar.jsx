@@ -51,7 +51,7 @@ const Sidebar = () => {
           </span>
           Orders
         </a>
-      </li>
+      </li> 
       <li className="active settings-sub">
         <a className='d-flex' style={{ textDecoration: "none" }} href="#" id="settingsDropdown" onClick={toggleSettings}>
           <span>
