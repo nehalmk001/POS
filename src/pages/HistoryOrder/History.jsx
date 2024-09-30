@@ -5,6 +5,8 @@ import Navbar from '../../layout/Navbar';
 import Sidebar from '../../layout/Sidebar';
 import Footer from '../../layout/Footer';
 import  orders from '../../assets/order.jpg'
+import { IoIosSearch } from 'react-icons/io';
+import Navlink from '../../Components/Navlinks/Navlink';
 
 
 const headers = [
@@ -29,6 +31,11 @@ const headers = [
     ['C009', '2024-09-09', 'Camera', '1', '$1500', 'INV1009', 'PayPal'],
     ['C010', '2024-09-10', 'Printer', '2', '$600', 'INV1010', 'Debit Card'],
   ];
+
+  const link = [
+    { href: "/orders", eventKey: "orders", label: "Orders" },
+    { href: "/history", eventKey: "history", label: "History" },
+  ]
   
 const History = () => {
   return (
@@ -36,32 +43,16 @@ const History = () => {
       <Navbar />
       <Sidebar />
       <div className="main">     
-        <div className="search-box d-flex justify-content-between ">
+      <div className="search-box d-flex justify-content-between ">
           <div className="search-container">
             <input
               type="text"
               className="search-input"
               placeholder="Search your Products"
             />
-            <i className="fas fa-search search-icon" />
+            <div className='search-icon'><IoIosSearch size={20}/></div>
           </div>
-          <ul className="nav justify-content-end">
-            <li className="nav-item ">
-              <a
-                className="nav-link active "
-                aria-current="page"
-                id="show-orders"
-                href="#"
-              >
-                Orders
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link " id="show-history" href="#">
-                History
-              </a>
-            </li>
-          </ul>
+          <div className='nav-tab'><Navlink link={link} defaultActiveKey="/orders"  /></div>
         </div>
 
         <div className='table-wrapper'>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useState , useEffect} from 'react'
 import Navbar from '../../layout/Navbar'
 import Sidebar from '../../layout/Sidebar'
 import Footer from '../../layout/Footer'
@@ -6,6 +6,17 @@ import '../../css/Dashboard.css'
 import { IoMail } from "react-icons/io5";
 
 const Dashboard = () => {
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate data loading
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer); // Cleanup timeout
+  }, []);
 
   
   return (
@@ -20,10 +31,10 @@ const Dashboard = () => {
     <div className="col-10 p-0">
     <Navbar/>
 
-    <div id="content">
+    <div id="content"  >
 
    
-      
+       
 
         
 
@@ -188,12 +199,31 @@ const Dashboard = () => {
                 <div className="profile">
 
                   <div className="profile1">
+
+                  {isLoading ? (
+            <div className="shimmer shimmer-image"></div>
+          ) : (
+
                      <div className="profile1-img"> 
                       <img src="https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=" alt=""/>
                     </div>
+
+                     )}
                       <div className="profile-text">
+                        
+                      {isLoading ? (
+              <>
+                <div className="shimmer shimmer-text"></div>
+                <div className="shimmer shimmer-text" style={{ width: '60%' }}></div>
+              </>
+            ) : (
+              <>
+
                       <h3>Customer Name</h3>
                       <h5>+91 83********</h5>
+
+                      </>
+            )}
                     </div>
                   </div>
 
