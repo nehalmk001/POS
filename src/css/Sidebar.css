@@ -12,6 +12,8 @@
 }
 
 
+
+
 .side-link li a span {
     margin-right: 10px; /* Space between the icon and text */
 }
@@ -97,7 +99,7 @@
     transition: height 0.5s ease, opacity 0.5s ease !important;
   }
   
-  /* When dropdown is shown */
+  
   #settingsMenu.show {
     height: auto;
     opacity: 1;
@@ -110,7 +112,7 @@
 }
 
 /* When the dropdown is open, rotate the icon 180 degrees */
-.rotate {
+.dropdownicon.rotate {
   transform: rotate(180deg);
 }
 

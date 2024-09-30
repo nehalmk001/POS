@@ -1,14 +1,14 @@
 import React from 'react'
-import Orders from './pages/Orders/Orders'
+// import Orders from './pages/Orders/Orders'
 // import History from './pages/HistoryOrder/History'
-// import Dashboard from './pages/Dashboard/Dashboard'
+import Dashboard from './pages/Dashboard/Dashboard'
 
 const App = () => {
   return (
     <div>
-    {/* <Dashboard/> */}
+    <Dashboard/>
 
-    <Orders />
+    {/* <Orders /> */}
     {/* <History /> */}
 
     </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import '../css/Navbar.css'
 import { TiThMenu } from "react-icons/ti";
 import { FaBell } from "react-icons/fa";
@@ -8,6 +8,15 @@ import { IoMdSearch } from "react-icons/io";
 
 
 const Navbar = () => {
+
+  useEffect(() => {
+    // Initialize all tooltips on the page
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+     tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+      new window.bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  }, []);
+
   return (
    
 

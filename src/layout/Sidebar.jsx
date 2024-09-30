@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "../css/Sidebar.css"
 import { IoMdArrowDropdown } from "react-icons/io";
 import { FaChartSimple } from "react-icons/fa6";
@@ -9,6 +9,15 @@ import { MdMessage } from "react-icons/md";
 import { IoMdAddCircle } from "react-icons/io";
 
 const Sidebar = () => {
+
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false); // State for managing dropdown
+
+  const toggleSettings = (event) => {
+    event.preventDefault(); // Prevent default anchor behavior
+    setIsSettingsOpen(!isSettingsOpen); // Toggle the dropdown
+  };
+    
+
   return (
  
 
@@ -44,7 +53,7 @@ const Sidebar = () => {
         </a>
       </li>
       <li className="active settings-sub">
-        <a className='d-flex' style={{ textDecoration: "none" }} href="#" id="settingsDropdown">
+        <a className='d-flex' style={{ textDecoration: "none" }} href="#" id="settingsDropdown" onClick={toggleSettings}>
           <span>
           <IoSettingsSharp />
           </span>
@@ -54,7 +63,7 @@ const Sidebar = () => {
             </div>
 
         </a>
-        <ul className="collapse list-unstyled" id="settingsMenu">
+        <ul className={`collapse list-unstyled ${isSettingsOpen ? 'show' : ''}`} id="settingsMenu">
           <li>
             <a style={{ fontSize: "1em" }} href="#">
               <span>
