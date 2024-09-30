@@ -5,6 +5,7 @@ import Sidebar from '../../layout/Sidebar'
 import Footer from '../../layout/Footer'
 import Table from '../../Components/Table/Table'
 import  orders from '../../assets/order.jpg'
+import { IoIosSearch } from "react-icons/io";
 
 
 const Orders = () => {
@@ -38,7 +39,7 @@ const Orders = () => {
               className="search-input"
               placeholder="Search your Products"
             />
-            <i className="fas fa-search search-icon" />
+            <div className='search-icon'><IoIosSearch size={20}/></div>
           </div>
           <ul className="nav justify-content-end">
             <li className="nav-item ">
