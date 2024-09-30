@@ -6,12 +6,12 @@
     
     .grid-container {
         display: grid;
-        grid-template-columns: 200px 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 200px 1fr 1fr 1fr 1fr 400px;
         grid-template-rows: 60px 1fr auto;
         height: 100vh;
         grid-template-areas: 
             'side-nav navbar navbar navbar navbar navbar'
-            'side-nav main main main order-window order-window'
+            'side-nav main main main main order-window'
             'side-nav footer footer footer footer footer';
         transition: grid-template-columns 0.3s ease; /* Transition for the grid */
     }
@@ -92,7 +92,7 @@
     background-color: #f1f1f1;
     font-weight: bold;
    }
-      .header, .row {
+      .header, .rows {
         border-bottom: 1px solid #ddd;
       }
 
@@ -124,7 +124,7 @@
         min-height: 600px;
        max-height: 600px;
         border-radius: 10px;
-        padding: 0px 40px;
+        padding: 0px 30px;
         padding-top:30px;
         
         overflow-y: auto;
@@ -141,16 +141,23 @@
     }
     
    
+    .btn-cont{
+        gap: 10px;
+        align-items: center;
+       
+    }
     .btn-counter {
-        border: 1px solid black;
         background-color: #2bc46e;
         color: white;
+        padding: 10px;
+        border-radius: 15px;
+       
     }
 
     .btn-counter:hover{
         background-color: white;
         color: #2bc46e;
-        border: 1px solid  #2bc46e;
+      
     }
     
     .confirm-btn{
@@ -173,6 +180,16 @@
        
     }
     
+    .title-order{
+        font-size: 14px;
+        margin-bottom: 0;
+        font-weight: bold;
+    }
+
+    .title-order p{
+        font-size: 14px;
+        margin-bottom: 0;
+    }
     
     
       

@@ -110,24 +110,28 @@ const Orders = () => {
 
       {/* order window div */}
       <div className="order-window ">
-        <div className="orders " style={{border:'1px solid black'}}>
-          <div className="order-list" id="order-list">
+        <div className="orders " >
+          <div className="order-lists" id="order-lists">
+
             {selectedProduct.length > 0 ? (
               selectedProduct.map((product, index) => (
-                <Card key={index} border="success" style={{ width: '28rem', marginBottom: '10px' }}>
-                  <Card.Header className='d-flex justify-content-between bg-white' style={{borderBottom:'none'}}>
-                    <div className='pdt-img'><img src="https://hbkonline.in/pub/media/catalog/product/a/p/apple_fruit_powder3.jpg" style={{width:'66px',height:'66px'}} alt="Product" /></div>
+                <Card key={index} border="success" style={{ width: '20rem', marginBottom: '10px' ,background:' background-color: #ebfaf1'}}>
+                  <Card.Header className='d-flex justify-content-end bg-white p-0 m-0' style={{borderBottom:'none' }}>
                     <div><IoMdClose /></div>
                   </Card.Header>
-                  <Card.Body>
-                    <Card.Title className='mt-0'>{product.name}</Card.Title>
+                  <Card.Body className='m-0 p-0'>
                     <Card.Text>
-                      <p className='mb-0'>Quantity: {product.quantity}</p>
-                      <p className='mb-3'>Price: ${(product.quantity * product.price).toFixed(2)}</p>
-                      <ButtonGroup size="sm" className='w-50'>
-                        <Button className='btn-counter' onClick={() => incrementQuantity(product.id)}><FaPlus /></Button>
-                        <Button className='btn-counter' onClick={() => decrementQuantity(product.id)}><FaMinus /></Button>
-                      </ButtonGroup>
+                      <div className='card-content d-flex justify-content-around'>
+                    <div className='pdt-img'><img src="https://hbkonline.in/pub/media/catalog/product/a/p/apple_fruit_powder3.jpg" style={{width:'66px',height:'66px'}} alt="Product" /></div>
+                     <div className='order-txt'> 
+                     <Card.Title className='title-order mt-0'>{product.name}</Card.Title>
+                      <p className='mb-0' style={{fontSize:'14px',marginBottom:'0px'}}>Quantity: {product.quantity}</p>
+                      <p className='mb-3'>Price: ${(product.quantity * product.price).toFixed(2)}</p></div>
+                      <div  className='btn-cont w-25 d-flex p-0 m-0 '>
+                        <button className='btn-counter' onClick={() => incrementQuantity(product.id)}><FaPlus /></button>
+                        <button className='btn-counter' onClick={() => decrementQuantity(product.id)}><FaMinus /></button>
+                      </div>
+                      </div>
                     </Card.Text>
                   </Card.Body>
                 </Card>
