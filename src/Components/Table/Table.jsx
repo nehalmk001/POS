@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Table = ({ headers, data }) => {
+const Table = ({ headers, data,onRowClick }) => {
   return (
     <div className='table-container bg-white'>
       {/* Header */}
@@ -15,7 +15,7 @@ const Table = ({ headers, data }) => {
       {/* Table content */}
       <div className='table-content'>
         {data.map((row, rowIndex) => (
-          <div className='row p-0 m-0' style={{ display: 'grid', gridTemplateColumns: headers.map(h => h.width).join(' ') }} key={rowIndex}>
+          <div className='row p-0 m-0' style={{ display: 'grid', gridTemplateColumns: headers.map(h => h.width).join(' ') }} key={rowIndex}  onClick={()=>onRowClick(row)}>
             {row.map((cell, cellIndex) => (
               <div key={cellIndex} className='cell p-2'>
                 {cell}
