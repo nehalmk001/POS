@@ -9,9 +9,7 @@ import { IoIosSearch } from "react-icons/io";
 import Navlink from '../../Components/Navlinks/Navlink'
 import Card from 'react-bootstrap/Card';
 import { IoMdClose } from "react-icons/io";
-
 import { FaPlus,FaMinus } from "react-icons/fa";
-
 import { AiFillDelete } from "react-icons/ai";
 
 
