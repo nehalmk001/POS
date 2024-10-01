@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
 import "../css/Sidebar.css"
+import { FaHistory } from "react-icons/fa";
 import { IoMdArrowDropdown } from "react-icons/io";
-import { IoPerson } from "react-icons/io5";
 import { FaShoppingCart } from "react-icons/fa";
 import { MdDashboard, MdMessage } from "react-icons/md";
 import { IoMdAddCircle } from "react-icons/io";
+import { FaCartPlus } from "react-icons/fa";
 
 const Sidebar = () => {
 
@@ -51,8 +52,8 @@ const Sidebar = () => {
           <FaShoppingCart />
           </span>
           Product
-          <div className='dropdownicon'>
-            <IoMdArrowDropdown />
+          <div>
+            <IoMdArrowDropdown className={`dropdownicon ${isProductsOpen ? 'rotate' : ''}`} />
             </div>
 
         </a>
@@ -74,8 +75,8 @@ const Sidebar = () => {
           <FaShoppingCart />
           </span>
           Orders
-          <div className='dropdownicon'>
-            <IoMdArrowDropdown />
+          <div>
+            <IoMdArrowDropdown className={`dropdownicon ${isOrdersOpen ? 'rotate' : ''}`}/>
             </div>
 
         </a>
@@ -83,7 +84,7 @@ const Sidebar = () => {
         <li>
             <a style={{ fontSize: "1em", display:"flex"}} href="#">
               <span style={{paddingLeft:"10%"}}>
-              <IoMdAddCircle />
+              <FaHistory />
               </span>
               Order history
             </a>
@@ -91,7 +92,7 @@ const Sidebar = () => {
           <li>
             <a style={{ fontSize: "1em", display:"flex" }} href="#">
               <span style={{paddingLeft:"10%"}}>
-              <IoMdAddCircle />
+              <FaCartPlus />
               </span>
               New orders
             </a>
