@@ -51,7 +51,10 @@
 #sidebar ul li{
   margin-top: 15px;
 }
-#sidebar ul .settings-sub li{
+#sidebar ul .orders-sub li{
+  margin-top: 0;
+}
+#sidebar ul .product-sub li{
   margin-top: 0;
 }
 
@@ -83,8 +86,8 @@
      border-left-color: #2bc46e ;
   }
   
-  /* Hover effect for the Settings */
-  #settingsDropdown:hover, #settingsDropdown.active {
+  /* Hover effect for the orders */
+  #ordersDropdown:hover, #ordersDropdown.active {
     background-color: #ebfaf1!important;
       transition: 0.5s;
       color: #2bc46e !important ;
@@ -92,7 +95,7 @@
   }
   
   /* Initially hidden dropdown */
-  #settingsMenu {
+  #ordersMenu {
     height: 0;
     opacity: 0;
     overflow: hidden;
@@ -100,11 +103,41 @@
   }
   
   
-  #settingsMenu.show {
+  #ordersMenu.show {
     height: auto;
     opacity: 1;
     transition: 0.5s; 
   }
+
+
+
+  
+  /* Hover effect for the Product */
+  #productsDropdown:hover, #productsDropdown.active {
+    background-color: #ebfaf1!important;
+      transition: 0.5s;
+      color: #2bc46e !important ;
+      border-left-color: #2bc46e ;
+  }
+  
+  /* Initially hidden dropdown */
+  #productsMenu {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: height 0.5s ease, opacity 0.5s ease !important;
+  }
+  
+  
+  #productsMenu.show {
+    height: auto;
+    opacity: 1;
+    transition: 0.5s; 
+  }
+
+
+
+  
   /* Default state of the dropdown icon */
 .dropdownicon {
   transition: transform 0.5s ease; /* **Smooth transition for rotation** */

@@ -1,20 +1,29 @@
 import React, {useState} from 'react'
 import "../css/Sidebar.css"
 import { IoMdArrowDropdown } from "react-icons/io";
-import { FaChartSimple } from "react-icons/fa6";
 import { IoPerson } from "react-icons/io5";
 import { FaShoppingCart } from "react-icons/fa";
-import { IoSettingsSharp } from "react-icons/io5";
 import { MdDashboard, MdMessage } from "react-icons/md";
 import { IoMdAddCircle } from "react-icons/io";
 
 const Sidebar = () => {
 
-  const [isSettingsOpen, setIsSettingsOpen] = useState(false); // State for managing dropdown
+  // product dropdown
+  const [isProductsOpen, setIsProductsOpen] = useState(false); // State for managing dropdown
 
-  const toggleSettings = (event) => {
+  const toggleProducts = (event) => {
     event.preventDefault(); // Prevent default anchor behavior
-    setIsSettingsOpen(!isSettingsOpen); // Toggle the dropdown
+    setIsProductsOpen(!isProductsOpen); // Toggle the dropdown
+  };
+    
+
+  // orders dropdown
+
+  const [isOrdersOpen, setIsOrdersOpen] = useState(false); // State for managing dropdown
+
+  const toggleOrders = (event) => {
+    event.preventDefault(); // Prevent default anchor behavior
+    setIsOrdersOpen(!isOrdersOpen); // Toggle the dropdown
   };
     
 
@@ -36,40 +45,55 @@ const Sidebar = () => {
           Dashboard
         </a>
       </li>
-      <li>
-        <a style={{ textDecoration: "none" }} href="">
-          <span>
-          <IoPerson />
-          </span>
-          Customers
-        </a>
-      </li>
-      <li>
-        <a style={{ textDecoration: "none" }} href="/orders">
+      <li className="active product-sub">
+        <a className='d-flex' style={{ textDecoration: "none" }} href="#" id="productsDropdown" onClick={toggleProducts}>
           <span>
           <FaShoppingCart />
           </span>
-          Orders
-        </a>
-      </li> 
-      <li className="active settings-sub">
-        <a className='d-flex' style={{ textDecoration: "none" }} href="#" id="settingsDropdown" onClick={toggleSettings}>
-          <span>
-          <IoSettingsSharp />
-          </span>
-          Settings
+          Product
           <div className='dropdownicon'>
             <IoMdArrowDropdown />
             </div>
 
         </a>
-        <ul className={`collapse list-unstyled ${isSettingsOpen ? 'show' : ''}`} id="settingsMenu">
-          <li>
-            <a style={{ fontSize: "1em" }} href="#">
-              <span>
+        <ul className={`collapse list-unstyled ${isProductsOpen ? 'show' : ''}`} id="productsMenu">
+        <li>
+            <a style={{ fontSize: "1em", display:"flex"}} href="#">
+              <span style={{paddingLeft:"10%"}}>
               <IoMdAddCircle />
               </span>
-              Add Product
+              Add new
+              
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li className="active orders-sub">
+        <a className='d-flex' style={{ textDecoration: "none" }} href="#" id="ordersDropdown" onClick={toggleOrders}>
+          <span>
+          <FaShoppingCart />
+          </span>
+          Orders
+          <div className='dropdownicon'>
+            <IoMdArrowDropdown />
+            </div>
+
+        </a>
+        <ul className={`collapse list-unstyled ${isOrdersOpen ? 'show' : ''}`} id="ordersMenu">
+        <li>
+            <a style={{ fontSize: "1em", display:"flex"}} href="#">
+              <span style={{paddingLeft:"10%"}}>
+              <IoMdAddCircle />
+              </span>
+              Order history
+            </a>
+          </li>
+          <li>
+            <a style={{ fontSize: "1em", display:"flex" }} href="#">
+              <span style={{paddingLeft:"10%"}}>
+              <IoMdAddCircle />
+              </span>
+              New orders
             </a>
           </li>
         </ul>
