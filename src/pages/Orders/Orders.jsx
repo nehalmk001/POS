@@ -13,6 +13,7 @@ import { FaPlus,FaMinus } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
 
 
+
 const Orders = () => {
   const headers = [
     { label: 'ID', key: 'id', width: '100px' },
@@ -32,7 +33,7 @@ const Orders = () => {
       quantity: 10,
       brand: 'Apple',
       price: 1200,
-      imageUrl: 'https://bl-i.thgim.com/public/incoming/fk5hrs/article67097604.ece/alternates/FREE_1200/MacBookAir%2015inch_5.JPG'
+      imageUrl: 'https://images-cdn.ubuy.co.in/6366930598ef383b595e65ea-apple-macbook-air-11-6-inch-retina.jpg'
     },
     {
       id: '002',
@@ -51,6 +52,33 @@ const Orders = () => {
       brand: 'Google',
       price: 400,
       imageUrl: 'https://m.media-amazon.com/images/I/71k+KbTBn5L.jpg'
+    },
+    {
+      id: '004',
+      name: 'Tablet',
+      category: 'Electronics',
+      quantity: 30,
+      brand: 'Google',
+      price: 400,
+      imageUrl: 'https://m.media-amazon.com/images/I/71k+KbTBn5L.jpg'
+    },
+    {
+      id: '005',
+      name: 'Tablet',
+      category: 'Electronics',
+      quantity: 30,
+      brand: 'Google',
+      price: 400,
+      imageUrl: 'https://m.media-amazon.com/images/I/71k+KbTBn5L.jpg'
+    },
+    {
+      id: '006',
+      name: 'Tablet',
+      category: 'Electronics',
+      quantity: 30,
+      brand: 'Google',
+      price: 400,
+      imageUrl: 'https://m.media-amazon.com/images/I/71k+KbTBn5L.jpg'
     }
 
   ];
@@ -60,6 +88,10 @@ const Orders = () => {
     { href: "/history", eventKey: "history", label: "History" },
   ]
 
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const [selectedProduct, setselectedProduct] = useState([])
   
@@ -112,6 +144,10 @@ const Orders = () => {
     setselectedProduct([]);
   }
 
+  const calculateTotal = () =>{
+    return selectedProduct.reduce((total,product)=>total+product.quantity * product.price,0).toFixed(2);
+  }
+
 
 
   return (
@@ -141,39 +177,68 @@ const Orders = () => {
       <div className="order-window ">
         <div className="orders " >
           <div className="order-lists" id="order-lists">
-
-            {selectedProduct.length > 0 ? (
-              selectedProduct.map((product, index) => (
-                <Card key={index} border="success" style={{ width: '20rem', marginBottom: '10px' ,background:' background-color: #ebfaf1'}}>
-                  <Card.Header className='d-flex justify-content-end bg-white p-0 m-0' style={{borderBottom:'none' }}>
-                    <div><IoMdClose onClick={()=>deleteProduct(product.id)}/></div>
-                  </Card.Header>
-                  <Card.Body className='m-0 p-0'>
-                    <Card.Text>
-                      <div className='card-content d-flex justify-content-around'>
-                    <div className='pdt-img'><img src={product.imageUrl}style={{width:'66px',height:'66px'}} alt="Product" /></div>
-                     <div className='order-txt'>
-                     <Card.Title className='title-order mt-0'>{product.name}</Card.Title>
-                      <p className='mb-0' style={{fontSize:'14px',marginBottom:'0px'}}>Quantity: {product.quantity}</p>
-                      <p className='mb-3'>Price: ${(product.quantity * product.price).toFixed(2)}</p></div>
-                      <div  className='btn-cont w-25 d-flex p-0 m-0 '>
-                        <button className='btn-counter' onClick={() => incrementQuantity(product.id)}><FaPlus /></button>
-                        <button className='btn-counter' onClick={() => decrementQuantity(product.id)}><FaMinus /></button>
-                      </div>
-                      </div>
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              ))
-            ) : (
-              <div className="hide">
-                <p className="text-center">Your orders will be displayed here</p>
-                <img style={{ width: "100%", marginTop: 30 }} src={orders} alt="Orders" />
-              </div>
-            )}
+          {selectedProduct.length > 0 ? (
+  <>
+    <div id="order-lists">
+      {selectedProduct.map((product, index) => (
+        <div key={index} className='card-wrapper d-flex justify-content-around p-6' style={{ position: 'relative', height: '100px' }}>
+          <div className='d-flex' style={{ alignItems: 'center' }}>
+            <div className='pdt-img'>
+              <img src={product.imageUrl} style={{ width: '66px', height: '66px' }} alt="Product" />
+            </div>
+            <div className='order-text mb-0'>
+              <h5 className='title-order mt-0'>{product.name}</h5>
+              <p className='mb-0' style={{ fontSize: '12px', marginBottom: '0px' }}>Category: {product.category}</p>
+              <p className='mb-3' style={{ fontSize: '12px', marginBottom: '0px' }}>Price: ${(product.quantity * product.price).toFixed(2)}</p>
+            </div>
           </div>
+
+          <div className='d-flex' style={{ alignItems: 'center' }}>
+            <button className='btn-counter' onClick={() => incrementQuantity(product.id)}>
+              <FaPlus />
+            </button>
+            <button className='btn-display'>
+              {product.quantity}
+            </button>
+            <button className='btn-counter' onClick={() => decrementQuantity(product.id)}>
+              <FaMinus />
+            </button>
+          </div>
+
+          <div className='d-flex' style={{ position: 'absolute', top: '0', right: '0' }}>
+            <p><IoMdClose onClick={() => deleteProduct(product.id)} /></p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Display order summary only when there are products */}
+    <div className='order-summary'>
+      <p><strong>Name:</strong> test</p>
+      <p><strong>Email:</strong> test@gmail.com</p>
+      <p>gst:</p>
+      <h5>Total Amount: ${selectedProduct.reduce((total, product) => total + (product.quantity * product.price), 0).toFixed(2)}</h5>
+    </div>
+  </>
+) : (
+  <div className="hide">
+    <p className="text-center">Your orders will be displayed here</p>
+    <img style={{ width: "100%", marginTop: 30 }} src={orders} alt="Orders" />
+  </div>
+)}
+
+         
+          </div>
+           
+          <div className='order-summary'>
+          <p><strong>Name:</strong> test</p>
+          <p><strong>Email:</strong> test@gmail.com</p>
+          <p>gst:</p>
+          <h5>Total Amount: ${selectedProduct.reduce((total, product) => total + (product.quantity * product.price), 0).toFixed(2)}</h5>
+         
+             </div>
           <div className='confirm-btn-container d-flex'>
-            <button className='confirm-btn'>Confirm</button>
+            <button className='confirm-btn' disabled={selectedProduct.length===0} variant="primary" onClick={handleShow}>Confirm</button>
             <div className='dlt-btn'><AiFillDelete size={26} onClick={deleteAllProducts}/></div>
           </div>
         </div> 
