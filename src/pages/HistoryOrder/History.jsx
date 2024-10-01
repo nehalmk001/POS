@@ -11,15 +11,16 @@ import Navlink from '../../Components/Navlinks/Navlink';
   
 const History = () => {
 
-  const historyHeaders = [
-    { label: 'Cust ID', key: 'custId', width: '15%' },
-    { label: 'Date', key: 'date', width: '40%' },
-    { label: 'Product', key: 'product', width: '40%' },
-    { label: 'Quantity', key: 'quantity', width: '30%' },
-    { label: 'Price', key: 'price', width: '40%' },
-    { label: 'Invoice ID', key: 'invoiceId', width: '30%' },
-    { label: 'Payment Mode', key: 'paymentMode', width: '30%' }
-  ];
+
+    const historyHeaders = [
+      { label: 'Cust ID', key: 'custId', width: '100px' },
+      { label: 'Date', key: 'date', width: '100px'}, 
+      { label: 'Product', key: 'product', width: '1fr' },
+      { label: 'Quantity', key: 'quantity', width: '100px' },
+      { label: 'Price', key: 'price', width: '1fr' },
+      { label: 'invoice ID', key: 'invoiceId', width: '1fr' },
+      { label: 'Payment Mode', key: 'paymentMode', width: '1fr' }
+    ];
   
   const historyData = [
     {
