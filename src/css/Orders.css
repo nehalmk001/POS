@@ -190,6 +190,13 @@
         font-size: 14px;
         margin-bottom: 0;
     }
+
+    .confirm-btn:disabled {
+        background-color: #ccc; /* Light grey for disabled */
+        color: #666; /* Grey text for disabled */
+        cursor: not-allowed;
+        border: none;
+      }
     
     
       

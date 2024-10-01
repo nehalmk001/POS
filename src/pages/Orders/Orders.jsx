@@ -11,6 +11,7 @@ import Card from 'react-bootstrap/Card';
 import { IoMdClose } from "react-icons/io";
 import { FaPlus,FaMinus } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
+import Invoicemodal from '../../Components/Modal/invoicemodal'
 
 
 const Orders = () => {
@@ -60,6 +61,10 @@ const Orders = () => {
     { href: "/history", eventKey: "history", label: "History" },
   ]
 
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const [selectedProduct, setselectedProduct] = useState([])
   
@@ -110,6 +115,10 @@ const Orders = () => {
 
   const deleteAllProducts = ()=>{
     setselectedProduct([]);
+  }
+
+  const calculateTotal = () =>{
+    return selectedProduct.reduce((total,product)=>total+product.quantity * product.price,0).toFixed(2);
   }
 
 
@@ -172,8 +181,9 @@ const Orders = () => {
               </div>
             )}
           </div>
+          <Invoicemodal show={show} handleClose={handleClose} total={calculateTotal()} selectedProduct={selectedProduct}/>
           <div className='confirm-btn-container d-flex'>
-            <button className='confirm-btn'>Confirm</button>
+            <button className='confirm-btn' disabled={selectedProduct.length===0} variant="primary" onClick={handleShow}>Confirm</button>
             <div className='dlt-btn'><AiFillDelete size={26} onClick={deleteAllProducts}/></div>
           </div>
         </div> 
