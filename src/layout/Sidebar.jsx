@@ -6,6 +6,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { MdDashboard, MdMessage } from "react-icons/md";
 import { IoMdAddCircle } from "react-icons/io";
 import { FaCartPlus } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
 
@@ -38,13 +39,13 @@ const Sidebar = () => {
     </div>
     <ul className="list-unstyled components side-link">
       <li>
-        <a style={{ textDecoration: "none" }} href="/">
+        <Link to='/' style={{ textDecoration: "none" }} >
           <span>
             {/*sidebar 2 link*/}
             <MdDashboard />
           </span>
           Dashboard
-        </a>
+        </Link>
       </li>
       <li className="active product-sub">
         <a className='d-flex' style={{ textDecoration: "none" }} href="#" id="productsDropdown" onClick={toggleProducts}>
@@ -90,12 +91,12 @@ const Sidebar = () => {
             </a>
           </li>
           <li>
-            <a style={{ fontSize: "1em", display:"flex" }} href="#">
+            <Link to="/orders" style={{ fontSize: "1em", display:"flex" }}>
               <span style={{paddingLeft:"10%"}}>
               <FaCartPlus />
               </span>
               New orders
-            </a>
+            </Link>
           </li>
         </ul>
       </li>
