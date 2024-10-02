@@ -121,6 +121,7 @@
     .order-lists{
         max-height: 460px;
         overflow-y: auto;
+        position: relative;
     }
     .orders{
         border: none;
@@ -133,7 +134,7 @@
         padding-top:30px;
         overflow-y: auto;
         display: flex;
-        position: relative;
+        
         flex-direction: column; /* Stack items vertically */
         justify-content: space-between;
        
@@ -182,22 +183,26 @@
     }
     
     .order-summary{
-       border-top: 1px dashed black;
+       border-radius: 1px solid black;
+       padding: 5px;
+
         padding: 10px;
         padding-bottom: 0px;
         text-align: left;
         margin-bottom: 0;
-        position: absolute;
-        bottom: 35px;
-        width: 380px;
-  left: 0;
+        position: fixed;
+  bottom: 73px;
+        width: 378px;
+  right:11px;
   background-color: white;
+  z-index: 107;
 }
 
     .order-summary p{
         margin-bottom: 0px;
         font-size: 12px;
         padding: 0;
+       
     }
     .confirm-btn{
         padding: 5px;

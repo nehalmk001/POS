@@ -214,10 +214,27 @@ const Orders = () => {
 
     {/* Display order summary only when there are products */}
     <div className='order-summary'>
-      <p><strong>Name:</strong> test</p>
-      <p><strong>Email:</strong> test@gmail.com</p>
-      <p>gst:</p>
+       <p><strong>Sub total</strong></p>
+      <p><strong>gst:</strong></p>
+      <hr />
       <h5>Total Amount: ${selectedProduct.reduce((total, product) => total + (product.quantity * product.price), 0).toFixed(2)}</h5>
+      <div className='payment-method' style={{ marginBottom: '10px' }}>
+    <strong>Mode of Payment:</strong>
+    <div style={{ marginTop: '5px' }}>
+      <label>
+        <input type="radio" name="payment" value="cash" />
+        Cash
+      </label>
+      <label style={{ marginLeft: '10px' }}>
+        <input type="radio" name="payment" value="debit" />
+        Debit Card
+      </label>
+    </div>
+    <div className='confirm-btn-container d-flex'>
+            <button className='confirm-btn' disabled={selectedProduct.length===0} variant="primary" onClick={handleShow}>Confirm</button>
+            <div className='dlt-btn'><AiFillDelete size={26} onClick={deleteAllProducts}/></div>
+          </div>
+  </div>
     </div>
   </>
 ) : (
@@ -227,20 +244,9 @@ const Orders = () => {
   </div>
 )}
 
-         
           </div>
-           
-          <div className='order-summary'>
-          <p><strong>Name:</strong> test</p>
-          <p><strong>Email:</strong> test@gmail.com</p>
-          <p>gst:</p>
-          <h5>Total Amount: ${selectedProduct.reduce((total, product) => total + (product.quantity * product.price), 0).toFixed(2)}</h5>
          
-             </div>
-          <div className='confirm-btn-container d-flex'>
-            <button className='confirm-btn' disabled={selectedProduct.length===0} variant="primary" onClick={handleShow}>Confirm</button>
-            <div className='dlt-btn'><AiFillDelete size={26} onClick={deleteAllProducts}/></div>
-          </div>
+          
         </div> 
       </div>
 
