@@ -183,7 +183,9 @@
     }
     
     .order-summary{
-       border-top: 1px dashed black;
+       border-radius: 1px solid black;
+       padding: 5px;
+
         padding: 10px;
         padding-bottom: 0px;
         text-align: left;
@@ -200,6 +202,7 @@
         margin-bottom: 0px;
         font-size: 12px;
         padding: 0;
+       
     }
     .confirm-btn{
         padding: 5px;
