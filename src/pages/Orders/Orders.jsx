@@ -6,11 +6,12 @@ import Footer from '../../layout/Footer'
 import Table from '../../Components/Table/Table'
 import  orders from '../../assets/order.jpg'
 import { IoIosSearch } from "react-icons/io";
-import Navlink from '../../Components/Navlinks/Navlink'
+
 import Card from 'react-bootstrap/Card';
 import { IoMdClose } from "react-icons/io";
 import { FaPlus,FaMinus } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
+import Navtabs from '../../Components/Navtabs/Navtabs'
 
 
 
@@ -151,9 +152,11 @@ const Orders = () => {
 
 
   return (
+    <div>
+  <Navbar />
+    <Navtabs />
     <div className='grid-container'>
-      <Navbar />
-      <Sidebar />
+      
       <div className="main">     
         <div className="search-box d-flex justify-content-between ">
           <div className="search-container">
@@ -164,13 +167,12 @@ const Orders = () => {
             />
             <div className='search-icon'><IoIosSearch size={20}/></div>
           </div>
-          <div className='nav-tab'><Navlink link={link} defaultActiveKey="/orders"  /></div>
+          {/* <div className='nav-tab'><Navlink link={link} defaultActiveKey="/orders"  /></div> */}
         </div>
 
         <div className='table-wrapper'>
           <Table headers={headers} data={data} onRowClick={handleRowClick}/>
           </div>
-     
       </div>
 
       {/* order window div */}
@@ -243,14 +245,13 @@ const Orders = () => {
     <img style={{ width: "100%", marginTop: 30 }} src={orders} alt="Orders" />
   </div>
 )}
-
-          </div>
+</div>
          
           
         </div> 
       </div>
-
-      <Footer />
+    </div>
+    <Footer />
     </div>
   )
 }

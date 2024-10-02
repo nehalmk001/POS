@@ -5,24 +5,10 @@
     }
     
     .grid-container {
-        display: grid;
-        grid-template-columns: 250px 1fr 1fr 1fr 1fr 400px;
-        grid-template-rows: 50px 1fr auto;
-        height: 100vh;
-        grid-template-areas: 
-            'side-nav navbar navbar navbar navbar navbar'
-            'side-nav main main main main order-window'
-            'side-nav footer footer footer footer footer';
-        transition: grid-template-columns 0.3s ease; /* Transition for the grid */
+        display: flex;
+        width: 100%;
     }
-    
-    .footer{
-        grid-area: footer;
-    }
-
-    .side-nav{
-        grid-area: side-nav;
-    }
+   
 
     .navbar{
         grid-area: navbar;
@@ -32,7 +18,7 @@
 
 
     .main{
-        
+        width: 70%;
         background-color: #f7f8fc;
         grid-area: main;
         padding: 20px 50px;
@@ -111,9 +97,10 @@
     .order-window{
         grid-area: order-window;
         height: 100%;
+        width: 30%;
         background-color: #f7f8fc;
         padding: 10px;
-       
+       position: relative;
         transition: width 0.3s ease,opacity 0.3s ease;
        
     }
@@ -121,7 +108,7 @@
     .order-lists{
         max-height: 460px;
         overflow-y: auto;
-        position: relative;
+        /* position: relative; */
     }
     .orders{
         border: none;
@@ -190,7 +177,7 @@
         padding-bottom: 0px;
         text-align: left;
         margin-bottom: 0;
-    position: fixed;
+    position: sticky;
   bottom: 73px;
 width: 378px;
   right:11px;
@@ -242,6 +229,12 @@ width: 378px;
         border: none;
       }
     
+      /* nav bootstrap */
+
+      .nav-item .nav-link{
+        text-decoration: none;
+        color: black;
+      }
     
       
 

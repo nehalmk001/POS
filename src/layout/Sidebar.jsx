@@ -71,34 +71,12 @@ const Sidebar = () => {
         </ul>
       </li>
       <li className="active orders-sub">
-        <a className='d-flex' style={{ textDecoration: "none" }} href="#" id="ordersDropdown" onClick={toggleOrders}>
+        <Link to="/orders" className='d-flex' style={{ textDecoration: "none" }}  id="ordersDropdown" >
           <span>
           <FaShoppingCart />
           </span>
-          Orders
-          <div>
-            <IoMdArrowDropdown className={`dropdownicon ${isOrdersOpen ? 'rotate' : ''}`}/>
-            </div>
-
-        </a>
-        <ul className={`collapse list-unstyled ${isOrdersOpen ? 'show' : ''}`} id="ordersMenu">
-        <li>
-            <a style={{ fontSize: "1em", display:"flex"}} href="#">
-              <span style={{paddingLeft:"10%"}}>
-              <FaHistory />
-              </span>
-              Order history
-            </a>
-          </li>
-          <li>
-            <Link to="/orders" style={{ fontSize: "1em", display:"flex" }}>
-              <span style={{paddingLeft:"10%"}}>
-              <FaCartPlus />
-              </span>
-              New orders
-            </Link>
-          </li>
-        </ul>
+         POS
+        </Link>
       </li>
       <li>
         <a style={{ textDecoration: "none" }} href="">
