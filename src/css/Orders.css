@@ -5,24 +5,14 @@
     }
     
     .grid-container {
-        display: grid;
-        grid-template-columns: 250px 1fr 1fr 1fr 1fr 400px;
-        grid-template-rows: 50px 1fr auto;
-        height: 100vh;
-        grid-template-areas: 
-            'side-nav navbar navbar navbar navbar navbar'
-            'side-nav main main main main order-window'
-            'side-nav footer footer footer footer footer';
-        transition: grid-template-columns 0.3s ease; /* Transition for the grid */
-    }
-    
-    .footer{
-        grid-area: footer;
+        display: flex;
+        width: 100%;
     }
 
-    .side-nav{
-        grid-area: side-nav;
-    }
+    /* body{
+        overflow: hidden;
+    } */
+   
 
     .navbar{
         grid-area: navbar;
@@ -32,13 +22,17 @@
 
 
     .main{
-        
+        width: 70%;
         background-color: #f7f8fc;
         grid-area: main;
         padding: 20px 50px;
     }
     
-   
+   .custom-active {
+    background-color: #f7f8fc !important; /* Ensures the background color applies */
+    color: #000; /* Adjust text color if needed */
+  }
+  
     
     .search-box{
         margin: 10px auto;
@@ -50,13 +44,13 @@
     }
     .search-container {
         position: relative;
-        width: 100%; /* Adjust the width as needed */
-        max-width: 150px; /* Optional: to control the maximum width */
+        width: 100%; 
+        max-width: 175px; 
     }
     
     .search-input {
         width: 100%;
-        padding: 10px 40px 10px 10px; /* Adds space for the search icon */
+        padding: 10px 40px 10px 10px; 
         border: 1px solid #ccc;
         border-radius: 4px;
         font-size: 10px;
@@ -69,14 +63,14 @@
         transform: translateY(-50%);
         font-size: 18px;
         color: #999;
-        cursor: pointer; /* Optional: adds a pointer effect to the icon */
+        cursor: pointer;
     }
 
    .nav-tab-link{
     color: #2bc46e!important;
    }
   
-    /* table */
+
     .table-wrapper{
         border: 1px solid #2bc46e;
   width: 100%;
@@ -87,55 +81,62 @@
   position: relative;
     }
 
+    .table-container{
+        max-height:504px;
+        overflow-y: scroll; 
+    }
+.table-content{
+   overflow-y: scroll; 
+    margin-top: 40px;
+}
       
    .header{
     background-color: #f1f1f1;
     font-weight: bold;
+    position: absolute;
+    width: 100%;
    }
       .header, .rows {
         border-bottom: 1px solid #ddd;
       }
 
-      .row:hover{
-        /* background-color:#ebfaf1; */
-        /* color: #2bc46e; */
+      /* .row:hover{
+        background-color:#ebfaf1; 
+        color: #2bc46e; 
         cursor: pointer;
-      }
+      } */
       
       
       
       
       
 
-    /* ----------------------------------------------------order window style here-------------------------------------------------------------> */
+    /* / ----------------------------------------------------order window style here-------------------------------------------------------------> / */
     .order-window{
-        grid-area: order-window;
-        height: 100%;
+        height: 100vh;
+        width: 29%;
         background-color: #f7f8fc;
         padding: 10px;
-       
+       position: relative;
         transition: width 0.3s ease,opacity 0.3s ease;
        
     }
 
-    .order-lists{
-        max-height: 460px;
-        overflow-y: auto;
-        position: relative;
-    }
+  
     .orders{
         border: none;
         outline: 1px solid #2bc46e;
         background-color: white;
         min-height: 600px;
        max-height: 600px;
+        height: 100%; 
         border-radius: 10px;
-        padding: 0px 30px;
-        padding-top:30px;
+        padding: 0px 5px;
+        padding-top:10px;
         overflow-y: auto;
         display: flex;
         
-        flex-direction: column; /* Stack items vertically */
+        flex-direction: column; 
         justify-content: space-between;
        
     }
@@ -181,6 +182,20 @@
         color: #2bc46e;
       
     }
+
+
+    .order-lists{
+        max-height: 100%;
+        padding: 0;
+        overflow-y: auto; 
+         overflow-x: hidden; 
+        position: relative;
+    }
+    #order-list{
+        max-height: 300px;
+        overflow-y: auto;
+    }
+
     
     .order-summary{
        border-radius: 1px solid black;
@@ -190,9 +205,9 @@
         padding-bottom: 0px;
         text-align: left;
         margin-bottom: 0;
-    position: fixed;
-  bottom: 73px;
-width: 378px;
+    position: sticky;
+   bottom: 73px; 
+ width: 378px; 
   right:11px;
   background-color: white;
   z-index: 107;
@@ -207,7 +222,7 @@ width: 378px;
     .confirm-btn{
         padding: 5px;
         font-size: 12px;
-        width: 90%;
+         width: 70%; 
         color: black;
         background-color: white;
         border-radius: 8px;
@@ -218,9 +233,18 @@ width: 378px;
         color: #2bc46e;
         background-color: #ebfaf1;
     }
+    .btn-final-green{
+        border: 1px solid green;
+    }
+    .btn-final-red{
+        border: 1px solid red;
+    }
+
 
     .confirm-btn-container{
-       padding: 5px 10px;
+       padding: 5px 10px; 
+       margin-top: 10px;
+       gap: 5px;
        
     }
     
@@ -236,12 +260,15 @@ width: 378px;
     }
 
     .confirm-btn:disabled {
-        background-color: #ccc; /* Light grey for disabled */
-        color: #666; /* Grey text for disabled */
+        background-color: #ccc; 
+        color: #666; 
         cursor: not-allowed;
         border: none;
       }
     
-    
-      
+  
 
+      .nav-item .nav-link{
+        text-decoration: none;
+        color: black;
+      }
