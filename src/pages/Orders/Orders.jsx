@@ -59,7 +59,7 @@ const Orders = () => {
       imageUrl: 'https://m.media-amazon.com/images/I/71k+KbTBn5L.jpg'
     },
     {
-      id: '003',
+      id: '004',
       name: 'Tablet',
       category: 'Electronics',
       quantity: 30,
@@ -68,7 +68,7 @@ const Orders = () => {
       imageUrl: 'https://m.media-amazon.com/images/I/71k+KbTBn5L.jpg'
     },
     {
-      id: '003',
+      id: '004',
       name: 'Tablet',
       category: 'Electronics',
       quantity: 30,
@@ -77,7 +77,7 @@ const Orders = () => {
       imageUrl: 'https://m.media-amazon.com/images/I/71k+KbTBn5L.jpg'
     },
     {
-      id: '003',
+      id: '005',
       name: 'Tablet',
       category: 'Electronics',
       quantity: 30,
@@ -86,7 +86,7 @@ const Orders = () => {
       imageUrl: 'https://m.media-amazon.com/images/I/71k+KbTBn5L.jpg'
     },
     {
-      id: '003',
+      id: '005',
       name: 'Tablet',
       category: 'Electronics',
       quantity: 30,
@@ -95,7 +95,7 @@ const Orders = () => {
       imageUrl: 'https://m.media-amazon.com/images/I/71k+KbTBn5L.jpg'
     },
     {
-      id: '003',
+      id: '006',
       name: 'Tablet',
       category: 'Electronics',
       quantity: 30,
@@ -104,7 +104,7 @@ const Orders = () => {
       imageUrl: 'https://m.media-amazon.com/images/I/71k+KbTBn5L.jpg'
     },
     {
-      id: '003',
+      id: '006',
       name: 'Tablet',
       category: 'Electronics',
       quantity: 30,
@@ -113,7 +113,7 @@ const Orders = () => {
       imageUrl: 'https://m.media-amazon.com/images/I/71k+KbTBn5L.jpg'
     },
     {
-      id: '003',
+      id: '007',
       name: 'Tablet',
       category: 'Electronics',
       quantity: 30,
@@ -122,7 +122,7 @@ const Orders = () => {
       imageUrl: 'https://m.media-amazon.com/images/I/71k+KbTBn5L.jpg'
     },
     {
-      id: '003',
+      id: '007',
       name: 'Tablet',
       category: 'Electronics',
       quantity: 30,
@@ -173,14 +173,14 @@ const Orders = () => {
   };
 
   return (
-    <div>
+    <div className='order-main'>
       {/* Navbar and Sidebar are commented out */}
       {/* <Navbar /> */}
       <div className='row'>
   <div className='col-11'>
     <Navtabs />
   </div>
-  <div className='col home d-flex justify-content-center align-items-center'><Link to="/" >
+  <div className='col home d-flex justify-content-center align-items-center p-0'><Link to="/" >
       <FaHome size={20} />
     </Link></div>
 </div>
@@ -221,9 +221,9 @@ const Orders = () => {
                       </div>
 
                       <div className="d-flex" style={{ alignItems: 'center' }}>
-                        <button className="btn-counter" onClick={() => incrementQuantity(product.id)}><FaPlus /></button>
+                      <button className="btn-counter" onClick={() => decrementQuantity(product.id)}><FaMinus /></button>
                         <button className="btn-display">{product.quantity}</button>
-                        <button className="btn-counter" onClick={() => decrementQuantity(product.id)}><FaMinus /></button>
+                        <button className="btn-counter" onClick={() => incrementQuantity(product.id)}><FaPlus /></button>
                       </div>
 
                       <div className="d-flex" style={{ position: 'absolute', top: '0', right: '0' }}>
@@ -242,8 +242,8 @@ const Orders = () => {
                       <label style={{ marginLeft: '10px' }}><input type="radio" name="payment" value="debit" /> Debit Card</label>
                     </div>
                     <div className="confirm-btn-container d-flex justify-content-center">
-                      <button className="confirm-btn" disabled={selectedProduct.length === 0}>Confirm</button>
-                      <button className="confirm-btn" onClick={deleteAllProducts}>Cancel</button>
+                      <button className="confirm-btn btn-final-green" disabled={selectedProduct.length === 0}>Confirm</button>
+                      <button className="confirm-btn btn-final-red" onClick={deleteAllProducts}>Cancel</button>
                     </div>
                   </div>
                 </div>
