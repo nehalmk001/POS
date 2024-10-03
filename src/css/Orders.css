@@ -1,49 +1,46 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    }
-    
-    .grid-container {
-        display: flex;
-        width: 100%;
-        background-color:#f7f8fc ;
-        gap: 20px;
-        padding: 20px 30px;
-    }
+}
 
-    /* body{
-        overflow: hidden;
-    } */
-   
+.grid-container {
+    display: flex;
+    width: 100%;
+    background-color: #f7f8fc;
+    gap: 20px;
+    padding: 20px 30px;
+}
 
-    .navbar{
-        grid-area: navbar;
-      background-color: #ffffff;
-      text-align: center;
-    }
-    .order-main{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
+/* body {
+    overflow: hidden;
+} */
 
+.navbar {
+    grid-area: navbar;
+    background-color: #ffffff;
+    text-align: center;
+}
 
-    .main{
-        width: 70%;
-        background-color: #f7f8fc;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        /* grid-area: main; */
-        /* padding: 20px 50px; */
-    }
-    
-   .custom-active {
-    background-color: #f7f8fc !important; /* Ensures the background color applies */
-    color: #000; /* Adjust text color if needed */
-  }
-  
+.order-main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    width: 70%;
+    background-color: #f7f8fc;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.custom-active {
+    background-color: #f7f8fc !important; / Ensures the background color applies /
+    color: #000; / Adjust text color if needed /
+}
+
     
     .search-box{
         /* margin: 10px auto; */
