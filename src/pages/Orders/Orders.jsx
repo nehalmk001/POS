@@ -180,7 +180,7 @@ const Orders = () => {
   <div className='col-11'>
     <Navtabs />
   </div>
-  <div className='col home d-flex justify-content-center align-items-center p-0'><Link to="/" >
+  <div className='col home d-flex justify-content-center align-items-center p-0 m-0'><Link to="/" >
       <FaHome size={20} />
     </Link></div>
 </div>
