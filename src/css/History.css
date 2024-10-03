@@ -14,7 +14,6 @@
     .main{
         width: 70%;
         background-color: #f7f8fc;
-        grid-area: main;
         padding: 20px 50px;
     }
     
@@ -56,9 +55,7 @@
         cursor: pointer;
     }
 
-   .nav-tab-link{
-    color: #2bc46e!important;
-   }
+ 
   
 
     .table-wrapper{
@@ -135,126 +132,38 @@
         display: flex;
         position: relative;
     }
+
+    .invoice-details{
+        border: 1px dashed black;
+        width: 400px;
+        margin: auto;
+    }
     
    
-    .btn-cont{
-        align-items: center;
-       
-    }
-    .btn-counter {
-        background-color: #2bc46e;
-        color: white;
-        padding: 5px;
-    }
+    
+    
+   
+    
+   
 
     
-    .cardbody{
-        background: transparent;
-      padding: 2px;
-    }
-
-    .card-wrapper{
-        border: 2px solid #a3a3a4;
-        background-color:#f7f8fc ;
-        margin-bottom: 5px;
-        border-radius: 4px;
-       
-    }
-    
-    .btn-display{
-        background-color: transparent;
-        padding: 5px;
-        border: none;
-    }
-
-    .btn-counter:hover{
-        background-color: white;
-        color: #2bc46e;
-      
-    }
 
 
-    .order-lists{
-        max-height: 100%;
-        padding: 0;
-        overflow-y: auto; 
-         overflow-x: hidden; 
-        position: relative;
-    }
-    #order-list{
-        max-height: 300px;
-        overflow-y: auto;
-    }
+  
 
     
-    .order-summary{
-       border-radius: 1px solid black;
-       padding: 5px;
+  
 
-        padding: 10px;
-        padding-bottom: 0px;
-        text-align: left;
-        margin-bottom: 0;
-    position: sticky;
-   bottom: 73px; 
- width: 378px; 
-  right:11px;
-  background-color: white;
-  z-index: 107;
-}
+  
+   
+   
 
-    .order-summary p{
-        margin-bottom: 0px;
-        font-size: 12px;
-        padding: 0;
-       
-    }
-    .confirm-btn{
-        padding: 5px;
-        font-size: 12px;
-         width: 70%; 
-        color: black;
-        background-color: white;
-        border-radius: 8px;
-        border: none;
-        border: 1px solid #2bc46e;
-    }
-    .confirm-btn:hover{
-        color: #2bc46e;
-        background-color: #ebfaf1;
-    }
-    .btn-final-green{
-        border: 1px solid green;
-    }
-    .btn-final-red{
-        border: 1px solid red;
-    }
-
-
-    .confirm-btn-container{
-       padding: 5px 10px; 
-       margin-top: 10px;
-       gap: 5px;
-       
-    }
     
-    .title-order{
-        font-size: 14px;
-        margin-bottom: 0;
-        font-weight: bold;
-    }
+    
+   
 
-    .title-order p{
-        font-size: 14px;
-        margin-bottom: 0;
-    }
-
-    .confirm-btn:disabled {
-        background-color: #ccc; 
-        color: #666; 
-        cursor: not-allowed;
-        border: none;
-      }
+   
+    
     
   
 
@@ -262,3 +171,6 @@
         text-decoration: none;
         color: black;
       }
+.invoice-details{
+    border: 1px solid dashed black;
+}
