@@ -10,6 +10,7 @@
         background-color: #f7f8fc;
         gap: 20px;
         padding: 20px 30px;
+        height: 100vh!important;
     }
 
 
@@ -23,8 +24,8 @@
     
     
     .custom-active {
-        background-color: #f7f8fc !important; 
-        color: #000; 
+        background-color: #ebfaf1!important; 
+        color: #2bc46e!important; 
     }
     
         
@@ -69,7 +70,7 @@
         border: 1px solid #2bc46e;
   width: 100%;
   margin-top: 10px;
-  min-height: 475px;
+  min-height: 500px;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
@@ -90,15 +91,15 @@
     position: absolute;
     width: 100%;
    }
-      .header, .rows {
+      .header, .table-rows {
         border-bottom: 1px solid #ddd;
       }
 
-      /* .row:hover{
-        background-color:#ebfaf1; 
-        color: #2bc46e; 
-        cursor: pointer;
-      } */
+      .table-rows:hover{
+        background-color:#ebfaf1!important; 
+        color: #2bc46e!important; 
+        cursor: pointer!important;
+      } 
       
       
       
@@ -142,8 +143,21 @@
 
     .invoice-details{
         border: 1px dashed black;
-        /* width: 400px; */
-        margin: auto;
+       
+    }
+
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    
+    .invoice-details {
+      animation: fadeIn 0.5s ease-in-out;
     }
     
    

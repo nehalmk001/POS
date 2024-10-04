@@ -16,7 +16,7 @@ const Table = ({ headers, data, onRowClick }) => {
       <div className='table-content'>
         {data.map((row, rowIndex) => (
           <div
-            className='rows p-0 m-0'
+            className='table-row p-0 m-0'
             style={{ display: 'grid', gridTemplateColumns: headers.map(h => h.width).join(' ') }}
             key={rowIndex}
             onClick={() => onRowClick && onRowClick(row)} // Add row click only if onRowClick exists
