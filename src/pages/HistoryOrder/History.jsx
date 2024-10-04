@@ -36,7 +36,7 @@ const History = () => {
         </div>
       )
     },
-    { label: 'Payment Mode', key: 'paymentMode', width: '1fr' },
+    { label: 'Payment', key: 'paymentMode', width: '1fr' },
     { label: 'Status', key: 'status', width: '1fr' }
   ];
 
