@@ -378,3 +378,19 @@
 /* .dropdown-calcu{
     margin: 5px;
 } */
+
+.dropdown button{
+    background-color: transparent;
+    color: black;
+    border: none;
+}
+
+.dropdown button:hover,
+.dropdown button:focus,
+.dropdown button:active,
+.dropdown button.show {
+    background-color: transparent !important;
+    color: black;
+    border: none;
+    box-shadow: none; /* Remove any focus shadows */
+}

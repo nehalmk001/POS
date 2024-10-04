@@ -12,6 +12,7 @@ import Calculator from '../../components/Calculator/Calculator';
 import { Link } from 'react-router-dom';
 import { AiFillHome } from 'react-icons/ai';
 import Navtabs from "../../components/Navtabs/Navtabs"
+import Dropdowns from '../../Components/Dropdown/Dropdown';
 
 
 const Orders = () => {
@@ -26,8 +27,7 @@ const Orders = () => {
 
 
 
-
-
+  
 
 
   const headers = [
@@ -48,7 +48,7 @@ const Orders = () => {
       quantity: 10,
       brand: 'Apple',
       price: 1200,
-      imageUrl: 'https://images-cdn.ubuy.co.in/6366930598ef383b595e65ea-apple-macbook-air-11-6-inch-retina.jpg'
+      imageUrl: 'https://m.media-amazon.com/images/I/71jG+e7roXL._AC_UF1000,1000_QL80_.jpg'
     },
     {
       id: '002',
@@ -66,100 +66,61 @@ const Orders = () => {
       quantity: 30,
       brand: 'Google',
       price: 400,
-      imageUrl: 'https://m.media-amazon.com/images/I/71k+KbTBn5L.jpg'
-    }
-    ,{
-      id: '003',
-      name: 'Tablet',
-      category: 'Electronics',
-      quantity: 30,
-      brand: 'Google',
-      price: 400,
-      imageUrl: 'https://m.media-amazon.com/images/I/71k+KbTBn5L.jpg'
+      imageUrl: 'https://images-cdn.ubuy.co.in/633b593b89c5453959017fec-google-pixel-slate-12-3-quot.jpg'
     },
     {
       id: '004',
-      name: 'Tablet',
-      category: 'Electronics',
-      quantity: 30,
-      brand: 'Google',
-      price: 400,
-      imageUrl: 'https://m.media-amazon.com/images/I/71k+KbTBn5L.jpg'
-    },
-    {
-      id: '004',
-      name: 'Tablet',
-      category: 'Electronics',
-      quantity: 30,
-      brand: 'Google',
-      price: 400,
-      imageUrl: 'https://m.media-amazon.com/images/I/71k+KbTBn5L.jpg'
+      name: 'Basmati Rice',
+      category: 'Groceries',
+      quantity: 50,
+      brand: 'india gate',
+      price: 30,
+      imageUrl: 'https://m.media-amazon.com/images/I/91MZComV1xL.jpg'
     },
     {
       id: '005',
-      name: 'Tablet',
-      category: 'Electronics',
-      quantity: 30,
-      brand: 'Google',
-      price: 400,
-      imageUrl: 'https://m.media-amazon.com/images/I/71k+KbTBn5L.jpg'
-    },
-    {
-      id: '005',
-      name: 'Tablet',
-      category: 'Electronics',
-      quantity: 30,
-      brand: 'Google',
-      price: 400,
-      imageUrl: 'https://m.media-amazon.com/images/I/71k+KbTBn5L.jpg'
+      name: 'Milk',
+      category: 'Groceries',
+      quantity: 40,
+      brand: 'milma',
+      price: 20,
+      imageUrl: 'https://homedelivery.ramachandran.in/media/catalog/product/cache/04c5c5c4276fe9dba74400abc896c29c/m/i/milma.jpg'
     },
     {
       id: '006',
-      name: 'Tablet',
-      category: 'Electronics',
-      quantity: 30,
-      brand: 'Google',
-      price: 400,
-      imageUrl: 'https://m.media-amazon.com/images/I/71k+KbTBn5L.jpg'
-    },
-    {
-      id: '006',
-      name: 'Tablet',
-      category: 'Electronics',
-      quantity: 30,
-      brand: 'Google',
-      price: 400,
-      imageUrl: 'https://m.media-amazon.com/images/I/71k+KbTBn5L.jpg'
+      name: 'Microwave Oven',
+      category: 'Home Appliance',
+      quantity: 5,
+      brand: 'LG',
+      price: 300,
+      imageUrl: 'https://images.jdmagicbox.com/quickquotes/images_main/lg-microwave-oven-2-12-2022-024-272327279-7ls2ynt0.jpg'
     },
     {
       id: '007',
-      name: 'Tablet',
-      category: 'Electronics',
-      quantity: 30,
-      brand: 'Google',
-      price: 400,
-      imageUrl: 'https://m.media-amazon.com/images/I/71k+KbTBn5L.jpg'
-    },
-    {
-      id: '007',
-      name: 'Tablet',
-      category: 'Electronics',
-      quantity: 30,
-      brand: 'Google',
-      price: 400,
-      imageUrl: 'https://m.media-amazon.com/images/I/71k+KbTBn5L.jpg'
+      name: 'Vacuum Cleaner',
+      category: 'Home Appliance',
+      quantity: 7,
+      brand: 'Dyson',
+      price: 500,
+      imageUrl: 'https://www.jiomart.com/images/product/original/rvmyn14rtm/inalsa-spruce-1200-w-vacuum-cleaner-with-blower-function-and-reusable-dust-bag-red-product-images-orvmyn14rtm-p598712841-0-202302231843.jpg?im=Resize=(420,420)'
     }
-    // Add more data if needed
   ];
+  
 
 
     // search fuction
 
     const [searchTerm, setsearchTerm] = useState('');
+    const category = [{name:'Sort By',cat0:'All',cat1:'Electronics',cat2:'Groceries',cat3:'Home Appliance'}]
+    const [selectedCategory, setselectedCategory] = useState('')
+
 
     const filtereddata =data.filter(item=>
-      item.name.toLowerCase().includes(searchTerm.toLowerCase())
+      item.name.toLowerCase().includes(searchTerm.toLowerCase())&&
+      (selectedCategory === 'All' || !selectedCategory || item.category===selectedCategory)
     )
+
+    
 
     
   
@@ -204,8 +165,7 @@ const Orders = () => {
 
   return (
     <div className='order-main pt-2'>
-      {/* Navbar and Sidebar are commented out */}
-      {/* <Navbar /> */}
+    
       <div className='row d-flex justify-content-between '>
   <div className='col-9'>
     <Navtabs />
@@ -250,7 +210,8 @@ const Orders = () => {
               />
               <div className="search-icon"><IoIosSearch size={20} /></div>
             </div>
-            <div className='filter-icon ms-3 '><FaFilter size={25} className='mt-1' /></div>
+
+           <div className='sort-div ms-2'> <Dropdowns category={category} onselectCategory={setselectedCategory}/></div>
           </div>
           <div className="table-wrapper">
             <Table headers={headers} data={filtereddata} onRowClick={handleRowClick} />
