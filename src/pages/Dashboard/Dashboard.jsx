@@ -21,7 +21,7 @@ const Dashboard = () => {
             <div className="row d-flex">
 
 
-              <div className="col col-8 d-flex flex-column" style={{gridRowGap:"20px"}}> 
+              <div className="col col-8 d-flex flex-column justify-content-between" style={{gridRowGap:"20px"}}> 
 
                {/* first */}
               
@@ -104,7 +104,7 @@ const Dashboard = () => {
 
                
 
-                  <div className="container second">
+                  <div className="container-fluid second">
                     <div className="row rows-col-3 second-main">
                       
                      
@@ -115,7 +115,7 @@ const Dashboard = () => {
                             <p>Total Points </p>
                             <span>300</span>
                           </div>
-                        <div className="total2 d-flex flex-column">
+                        <div className="total2 d-flex flex-column  mt-4">
                             <div className="total-2 d-flex">
                               <p>point used</p>
                               <p>150</p>
@@ -133,7 +133,7 @@ const Dashboard = () => {
                             <p>Total Points </p>
                             <span>300</span>
                           </div>
-                        <div className="total2 d-flex flex-column">
+                        <div className="total2 d-flex flex-column  mt-4">
                             <div className="total-2 d-flex">
                               <p>point used</p>
                               <p>150</p>
@@ -151,7 +151,7 @@ const Dashboard = () => {
                             <p>Total Points </p>
                             <span>300</span>
                           </div>
-                        <div className="total2 d-flex flex-column">
+                        <div className="total2 d-flex flex-column  mt-4">
                             <div className="total-2 d-flex">
                               <p>point used</p>
                               <p>150</p>
@@ -237,7 +237,7 @@ const Dashboard = () => {
           
            {/* <!-- table --> */}
           <div className="order-list">
-             <div className="container table-content">
+             <div className="container-fluid table-content">
               <div className="table-top">
                 <div className="top-heading">
                 <h2>  Order List</h2>
