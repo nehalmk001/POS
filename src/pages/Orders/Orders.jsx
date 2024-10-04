@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import '../../css/Orders.css';
-import Footer from '../../layout/Footer'; // Navbar and Sidebar are commented out
+
 import Table from '../../Components/Table/Table';
 import orders from '../../assets/order.jpg';
 import { IoIosSearch } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
 import { FaPlus, FaMinus, FaCalculator } from "react-icons/fa";
-import { FaFilter } from "react-icons/fa";
+
 import Calculator from '../../components/Calculator/Calculator';
 
 import { Link } from 'react-router-dom';
@@ -20,6 +20,7 @@ const Orders = () => {
   // dropdown calculator
 
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [selectedSort, setSelectedSort] = useState('Sort By');
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen); // Toggle the dropdown state
@@ -111,14 +112,26 @@ const Orders = () => {
     // search fuction
 
     const [searchTerm, setsearchTerm] = useState('');
-    const category = [{name:'Sort By',cat0:'All',cat1:'Electronics',cat2:'Groceries',cat3:'Home Appliance'}]
-    const [selectedCategory, setselectedCategory] = useState('')
+    const dropdownCategories = [
+      { label: 'All', value: 'All' },
+      { label: 'Electronics', value: 'Electronics' },
+      { label: 'Groceries', value: 'Groceries' },
+      { label: 'Home Appliance', value: 'Home Appliance' }
+  ];
+   
+  const [selectedCategory, setselectedCategory] = useState('')
 
+  const handleSelectCategory = (category) => {
+    console.log("Selected Category:", category); // Log selected category
+    setselectedCategory(category);
+    setSelectedSort(category); // Update title here if needed
+};
 
-    const filtereddata =data.filter(item=>
-      item.name.toLowerCase().includes(searchTerm.toLowerCase())&&
-      (selectedCategory === 'All' || !selectedCategory || item.category===selectedCategory)
-    )
+  const filtereddata = data.filter(item =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+    (selectedCategory === 'All' || selectedCategory === '' || item.category === selectedCategory)
+  );
+  
 
     
 
@@ -211,10 +224,10 @@ const Orders = () => {
               <div className="search-icon"><IoIosSearch size={20} /></div>
             </div>
 
-           <div className='sort-div ms-2'> <Dropdowns category={category} onselectCategory={setselectedCategory}/></div>
+           <div className='sort-div ms-2'>  <Dropdowns category={dropdownCategories} onSelectCategory={handleSelectCategory} title={selectedSort} /></div>
           </div>
           <div className="table-wrapper">
-            <Table headers={headers} data={filtereddata} onRowClick={handleRowClick} />
+            <Table headers={headers} data={filtereddata} onRowClick={handleRowClick}  />
           </div>
         </div>
 
@@ -237,9 +250,9 @@ const Orders = () => {
                       </div>
 
                       <div className="d-flex" style={{ alignItems: 'center' }}>
-                      <button className="btn-counter" onClick={() => decrementQuantity(product.id)}><FaMinus /></button>
+                      <button className="btn-counter" onClick={() => decrementQuantity(product.id)}><FaMinus size={14} /></button>
                         <button className="btn-display">{product.quantity}</button>
-                        <button className="btn-counter" onClick={() => incrementQuantity(product.id)}><FaPlus /></button>
+                        <button className="btn-counter" onClick={() => incrementQuantity(product.id)}><FaPlus size={14} /></button>
                       </div>
 
                       <div className="d-flex" style={{ position: 'absolute', top: '0', right: '0' }}>
