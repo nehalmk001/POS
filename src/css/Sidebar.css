@@ -33,13 +33,7 @@
   transition: all 0.5s ease;
   height: 100vh;
 }
-.logo{
-    /* animation: animate 10s linear infinite; */
-    background: linear-gradient(135deg,#13be59 0%, #11bc49 9%,#67cf74 36%,#71d175 60%,#afeaa2 78%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color:transparent !important;
 
-}
 #sidebar .side-link li{
   height: auto;
 }
@@ -47,6 +41,10 @@
 
 #sidebar .sidebar-header {
     padding: 20px 0px;
+    background: linear-gradient(135deg,#13be59 0%, #11bc49 9%,#67cf74 36%,#71d175 60%,#afeaa2 78%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent !important;
+
 }
 #sidebar ul li{
   margin-top: 15px;

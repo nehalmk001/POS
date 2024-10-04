@@ -7,24 +7,29 @@
     .grid-container {
         display: flex;
         width: 100%;
+        background-color: #f7f8fc;
+        gap: 20px;
+        padding: 20px 30px;
     }
 
 
-
-    .main{
+    .main {
         width: 70%;
         background-color: #f7f8fc;
-        padding: 20px 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
     
-   .custom-active {
-    background-color: #f7f8fc !important; /* Ensures the background color applies */
-    color: #000; /* Adjust text color if needed */
-  }
-  
     
+    .custom-active {
+        background-color: #f7f8fc !important; 
+        color: #000; 
+    }
+    
+        
     .search-box{
-        margin: 10px auto;
+        /* margin: 10px auto;  */
         background-color: #fefefe;
         padding: 15px;
         border-radius: 10px;
@@ -54,8 +59,10 @@
         color: #999;
         cursor: pointer;
     }
-
- 
+       .nav-tab-link{
+        color: #2bc46e!important;
+       }
+      
   
 
     .table-wrapper{
@@ -73,7 +80,7 @@
         overflow-y: scroll; 
     }
 .table-content{
-   overflow-y: scroll; 
+   /* overflow-y: scroll;  */
     margin-top: 40px;
 }
       
@@ -100,10 +107,10 @@
 
     /* / ----------------------------------------------------order window style here-------------------------------------------------------------> / */
     .order-window{
-        height: 100vh;
+        /* height: 100vh; */
         width: 29%;
         background-color: #f7f8fc;
-        padding: 10px;
+        /* padding: 10px; */
        position: relative;
         transition: width 0.3s ease,opacity 0.3s ease;
        
@@ -114,13 +121,13 @@
         border: none;
         outline: 1px solid #2bc46e;
         background-color: white;
-        min-height: 600px;
-       max-height: 600px;
+        min-height: 590px;
+       max-height: 590px;
         height: 100%; 
         border-radius: 10px;
-        padding: 0px 5px;
+        /* padding: 0px 5px; */
         padding-top:10px;
-        overflow-y: auto;
+        /* overflow-y: auto; */
         display: flex;
         
         flex-direction: column; 
@@ -135,7 +142,7 @@
 
     .invoice-details{
         border: 1px dashed black;
-        width: 400px;
+        /* width: 400px; */
         margin: auto;
     }
     

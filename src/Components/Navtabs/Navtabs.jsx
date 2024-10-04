@@ -1,5 +1,5 @@
 import Nav from 'react-bootstrap/Nav';
-import { FaCalculator, FaHistory, FaHome, FaShoppingCart } from 'react-icons/fa';
+import { FaHistory, FaShoppingCart } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 
 function Navtabs() {
@@ -15,11 +15,6 @@ function Navtabs() {
       <Nav.Item>
         <Nav.Link as={Link} to="/history" eventKey="/history" className={location.pathname === '/history' ? 'custom-active' :''}>
           <FaHistory /> History
-        </Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link as={Link} to="/calculator" eventKey="/calculator" className={location.pathname === '/calculator' ? 'custom-active' : ''}>
-          <FaCalculator /> Calculator
         </Nav.Link>
       </Nav.Item>
     </Nav>

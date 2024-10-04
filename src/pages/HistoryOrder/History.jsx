@@ -1,15 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import '../../css/Orders.css'
 import Table from '../../Components/Table/Table';
+import Navbar from '../../layout/Navbar';
+import Sidebar from '../../layout/Sidebar';
+import Footer from '../../layout/Footer';
+import  orders from '../../assets/order.jpg'
 import { IoIosSearch } from 'react-icons/io';
-import Navtabs from '../../Components/Navtabs/Navtabs';
+import Navtabs from "../../components/Navtabs/Navtabs"
 import { Link } from 'react-router-dom';
-import { FaEye, FaHome } from 'react-icons/fa';
-import '../../css/History.css'
+import { FaCalculator } from 'react-icons/fa';
+import Calculator from '../../components/Calculator/Calculator';
+import { AiFillHome } from 'react-icons/ai';
 
   
 const History = () => {
 
-  const [selectedInvoice, setselectedInvoice] = useState(null)
+
+  
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!isDropdownOpen); // Toggle the dropdown state
+  };
+
+
 
     const historyHeaders = [
       { label: 'Cust ID', key: 'custId', width: '100px' },
@@ -17,18 +31,8 @@ const History = () => {
       { label: 'Product', key: 'product', width: '1fr' },
       { label: 'Quantity', key: 'quantity', width: '100px' },
       { label: 'Price', key: 'price', width: '1fr' },
-      { label: 'invoice ID', key: 'invoiceId', width: '1fr', 
-        render: (invoiceId, row) => (
-          <div className='d-flex'>
-            {invoiceId}
-            <div>
-              <FaEye style={{cursor:'pointer'}} onClick={() => setselectedInvoice(row)} />
-            </div>
-          </div>
-        ) 
-      },
-      { label: 'Payment Mode', key: 'paymentMode', width: '1fr' },
-      { label: 'Status', key: 'Status', width: '1fr' }
+      { label: 'invoice ID', key: 'invoiceId', width: '1fr' },
+      { label: 'Payment Mode', key: 'paymentMode', width: '1fr' }
     ];
   
   const historyData = [
@@ -39,74 +43,47 @@ const History = () => {
       quantity: 2,
       price: '$2400',
       invoiceId: 'INV1001',
-      paymentMode: 'Credit Card',
-      Status: 'Completed'
-    },
-    {
-      custId: 'C002',
-      date: '2024-09-01',
-      product: 'Laptop',
-      quantity: 2,
-      price: '$2400',
-      invoiceId: 'INV1001',
-      paymentMode: 'Credit Card',
-      Status: 'Completed'
-    },
-    {
-      custId: 'C003',
-      date: '2024-09-01',
-      product: 'Laptop',
-      quantity: 2,
-      price: '$2400',
-      invoiceId: 'INV1001',
-      paymentMode: 'Credit Card',
-      Status: 'Completed'
-    },
-    {
-      custId: 'C004',
-      date: '2024-09-01',
-      product: 'Laptop',
-      quantity: 2,
-      price: '$2400',
-      invoiceId: 'INV1001',
-      paymentMode: 'Credit Card',
-      Status: 'Completed'
-    },
-    {
-      custId: 'C005',
-      date: '2024-09-01',
-      product: 'Laptop',
-      quantity: 2,
-      price: '$2400',
-      invoiceId: 'INV1001',
-      paymentMode: 'Credit Card',
-      Status: 'Completed'
-    },
-    {
-      custId: 'C006',
-      date: '2024-09-01',
-      product: 'Laptop',
-      quantity: 2,
-      price: '$2400',
-      invoiceId: 'INV1001',
-      paymentMode: 'Credit Card',
-      Status: 'Completed'
+      paymentMode: 'Credit Card'
     },
     // More rows...
   ];
 
-  
+  const link = [
+    { href: "/orders", eventKey: "orders", label: "Orders" },
+    { href: "/history", eventKey: "history", label: "History" },
+  ]
 
   return (
-    <div>
-    <div className='row'>
-  <div className='col-11'>
+    <div className='pt-2'>
+    <div className='row d-flex justify-content-between'>
+  <div className='col-9'>
     <Navtabs />
   </div>
-  <div className='col home d-flex justify-content-center align-items-center'><Link to="/" >
-      <FaHome size={20} />
-    </Link></div>
+
+
+  <div className=" col-2 dropdown-calcu">
+          <button
+            className="btn btn-secondary dropdown-toggle calcu-btn d-flex align-center justify-items-between"
+            type="button"
+            onClick={toggleDropdown} // Toggle the dropdown when button is clicked
+          >
+            <FaCalculator size={16}/><p className='mb-0 ms-2'>Calculator</p>
+          </button>
+          <div
+            className={`dropdown-menu ${isDropdownOpen ? 'show' : ''}`}
+            aria-labelledby="dropdownMenuButton"
+          >
+            <Calculator />
+          </div>
+        </div>
+        
+  <div className='col home d-flex justify-content-center align-items-center'>
+    <Link to="/" style={{background:"#de982f",color:"#ffffff",padding:"5px",display:"flex", justifyContent:"center", alignItems:"center", borderRadius:"50%"}} >
+    <AiFillHome size={20}/>
+    </Link>
+    </div>
 </div>
+
     <div className='grid-container'>
      
      
@@ -131,45 +108,20 @@ const History = () => {
 
       {/* order window div */}
       <div className="order-window ">
+        <div className="collapse-btn">
+          <img style={{ width: 25 }} src="./images/collapse.png" alt="" />
+        </div>
         <div className="orders">
-          {selectedInvoice && (
-          <div className='invoice-details p-4 '>
-            <div className='invoice-head p-2'>
-              <h1 className='text-center'>Invoice</h1>
-            </div>
-            <hr />
-            <div className='invoice-body mt-4'>
-              <div className='invoice-content d-flex justify-content-between'>
-              <p>Cust Id</p> <p>{selectedInvoice.custId}</p>
-              </div>
-              <div className='invoice-content d-flex justify-content-between'>
-              <p>email</p> <p></p>
-              </div>
-              <div className='invoice-content d-flex justify-content-between'>
-              <p>Date</p> <p>{selectedInvoice.date}</p>
-              </div>
-              <div className='invoice-content d-flex justify-content-between'>
-              <p>Time</p> <p>10:00 am</p>
-              </div>
-
-              <h4>Products</h4>
-              
-              <div className='invoice-content d-flex justify-content-between'>
-              <p>{selectedInvoice.product}</p> <p>qty:{selectedInvoice.quantity} price:$1200</p>
-              </div>
-              <div className='invoice-content d-flex justify-content-between'>
-              <p>mobile</p> <p>qty:2 price:$1200</p>
-              </div>
-              <div className='invoice-content d-flex justify-content-between'>
-              <p>mode of payment</p> <p>debit card</p>
-              </div>
-              <hr />
-              <div className='total d-flex justify-content-between'>
-               <h1>Total</h1><h1>$1400</h1>
-              </div>
+          <div className="orders-list" id="order-list">
+            {/* Selected products will be added here */}
+            <div className="hide">
+              <p className="text-center">Your orders will be displayed here</p>
+              <img
+                style={{ width: "100%", marginTop: 30 }}
+                src={orders}
+              />
             </div>
           </div>
-          )}
         </div>
       </div>
 

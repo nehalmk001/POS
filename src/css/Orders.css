@@ -1,46 +1,57 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+    }
 
-.grid-container {
-    display: flex;
-    width: 100%;
-    background-color: #f7f8fc;
-    gap: 20px;
-    padding: 20px 30px;
-}
+    .order-main{
+        display: flex;
+        flex-direction: column;
+    }
+    .main-navtab{
+        width: 100%;
+    }
+    
+    .grid-container {
+        display: flex;
+        width: 100%;
+        background-color:#f7f8fc ;
+        gap: 20px;
+        padding: 20px 30px;
+    }
 
-/* body {
-    overflow: hidden;
-} */
+    /* body{
+        overflow: hidden;
+    } */
+   
 
-.navbar {
-    grid-area: navbar;
-    background-color: #ffffff;
-    text-align: center;
-}
+    .navbar{
+        grid-area: navbar;
+      background-color: #ffffff;
+      text-align: center;
+    }
+    .order-main{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
 
-.order-main {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
 
-.main {
-    width: 70%;
-    background-color: #f7f8fc;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.custom-active {
-    background-color: #f7f8fc !important; / Ensures the background color applies /
-    color: #000; / Adjust text color if needed /
-}
-
+    .main{
+        width: 70%;
+        background-color: #f7f8fc;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        /* grid-area: main; */
+        /* padding: 20px 50px; */
+    }
+    
+   .custom-active {
+    background-color: #f7f8fc !important; /* Ensures the background color applies */
+    color: #000; /* Adjust text color if needed */
+  }
+  
     
     .search-box{
         /* margin: 10px auto; */
@@ -293,3 +304,77 @@
         text-decoration: none;
         color: black;
       }
+
+
+      .nav-tabs {
+        border-bottom: none; /* Remove bottom border of the entire Nav */
+      }
+      
+      .nav-tabs .nav-link {
+        border: none; /* Remove borders from individual links */
+      }
+      
+      .nav-tabs .nav-link.active {
+        border: none !important; /* Ensure the active tab doesn't have a border */
+      }
+      
+      .custom-active {
+        border-bottom: none !important; /* Ensure custom active class doesn't show a border */
+      }
+
+
+
+
+    
+
+      .mini-calculator {
+        width: 200px;
+        padding: 10px;
+        background-color: #f0f0f0;
+        border-radius: 8px;
+      }
+      
+      .display {
+        background-color: #333;
+        color: white;
+        font-size: 1.5rem;
+        text-align: right;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+      }
+      
+      .buttons-calcu{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+      }
+      
+      .calcu-btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 12px;
+        font-size: 14px;
+        background-color: #08994f;
+        color: #ffffff;
+      }
+      .calcu-btn p {
+        margin-bottom: 0;
+        margin-left: 5px; /* Adjust the space between icon and text */
+      }
+      
+      .calcu-btn:hover {
+        background-color: #0bba63;
+    }
+
+    .dropdown-menu{
+        padding: 0;
+        margin-top: 10px;
+        border-radius: 10px; /* Rounded corners */
+    }
+
+
+/* .dropdown-calcu{
+    margin: 5px;
+} */

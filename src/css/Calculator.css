@@ -1,0 +1,50 @@
+.mini-calculator {
+    width: 250px; /* Set width as per your requirement */
+    height: 300px; /* Set height as per your requirement */
+    background-color: #282c34; /* Dark background for the calculator */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+  }
+  
+  .display-calcu {
+    background-color: #1e1e1e; /* Darker background for display */
+    color: #61dafb; /* Bright color for text */
+    font-size: 25px; /* Large font size */
+    text-align: right; /* Align text to the right */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 10px; /* Space below display */
+    height: 40%; /* Adjust height as needed */
+    overflow: hidden; /* Hide overflow if any */
+  }
+  
+  .buttons-calcu {
+    display: grid; /* Use grid layout for buttons */
+    grid-template-columns: repeat(4, 1fr); /* Four buttons in a row */
+    gap: 5px; /* Space between buttons */
+    padding: 5px;
+  }
+  
+  button {
+    background-color: #61dafb; /* Button color */
+    color: #282c34; /* Text color */
+    font-size: 20px; /* Medium font size */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px; /* Padding around buttons */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  .mini-button:hover {
+    background: rgba(255, 255, 255, 0.1);;
+  }
+  
+ .mini-button:active {
+    background: rgba(255, 255, 255, 0.2);
+      border-radius: 14px;
+  }
+  

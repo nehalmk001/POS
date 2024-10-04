@@ -7,7 +7,7 @@ import { IoMdSearch } from "react-icons/io";
 
 
 
-const Navbar = () => {
+const Navbar = ({onToggleSidebar}) => {
 
   useEffect(() => {
     // Initialize all tooltips on the page
@@ -22,7 +22,7 @@ const Navbar = () => {
 
 <nav className="navbar navbar-expand-lg">
       <div className="container-fluid nav-content">
-        <button className="navbar-brand" id="navbar-brand">
+        <button onClick={onToggleSidebar} className="navbar-brand" id="navbar-brand">
         <TiThMenu />      
         </button> 
 

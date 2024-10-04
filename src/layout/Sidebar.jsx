@@ -8,7 +8,7 @@ import { IoMdAddCircle } from "react-icons/io";
 import { FaCartPlus } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
-const Sidebar = () => {
+const Sidebar = ({isCollapsed}) => {
 
   // product dropdown
   const [isProductsOpen, setIsProductsOpen] = useState(false); // State for managing dropdown
@@ -23,19 +23,15 @@ const Sidebar = () => {
 
   const [isOrdersOpen, setIsOrdersOpen] = useState(false); // State for managing dropdown
 
-  const toggleOrders = (event) => {
-    event.preventDefault(); // Prevent default anchor behavior
-    setIsOrdersOpen(!isOrdersOpen); // Toggle the dropdown
-  };
-    
+
 
   return (
  
 
-<nav id="sidebar" className="active">
+<nav id="sidebar" className={`active ${isCollapsed ? 'collapsed' : ''}`}>
     {/*sidebar collapse*/}
-    <div className="sidebar-header">
-      <h3 className="text-center logo">ItemPOS</h3>
+    <div className="sidebar-header text-center">
+      <h3>{!isCollapsed && 'ItemPOS'}</h3>
     </div>
     <ul className="list-unstyled components side-link">
       <li>
@@ -44,7 +40,7 @@ const Sidebar = () => {
             {/*sidebar 2 link*/}
             <MdDashboard />
           </span>
-          Dashboard
+          {!isCollapsed && 'Dashboard'}
         </Link>
       </li>
       <li className="active product-sub">
@@ -52,7 +48,7 @@ const Sidebar = () => {
           <span>
           <FaShoppingCart />
           </span>
-          Product
+          {!isCollapsed && 'Product'}
           <div>
             <IoMdArrowDropdown className={`dropdownicon ${isProductsOpen ? 'rotate' : ''}`} />
             </div>
@@ -64,7 +60,7 @@ const Sidebar = () => {
               <span style={{paddingLeft:"10%"}}>
               <IoMdAddCircle />
               </span>
-              Add new
+             {!isCollapsed && 'add new'}
               
             </a>
           </li>
@@ -75,15 +71,14 @@ const Sidebar = () => {
           <span>
           <FaShoppingCart />
           </span>
-         POS
+          {!isCollapsed && 'POS'}
         </Link>
       </li>
       <li>
         <a style={{ textDecoration: "none" }} href="">
           <span>
           <MdMessage />
-          </span>
-          Messages
+          </span>{!isCollapsed && 'Messages'}
         </a>
       </li>
     </ul>

@@ -1,35 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
-
 import { Outlet, useLocation } from 'react-router-dom';
 import Footer from './Footer';
 
 const Layout = () => {
   const location = useLocation();
+  
+  // Sidebar state
+  const [issidebarcollapsed, setissidebarcollapsed] = useState(false);
+
+  // Function to toggle sidebar
+  const toggleSidebar = () => {
+    setissidebarcollapsed(!issidebarcollapsed);
+  };
 
   // Determine if the current route is '/orders' or '/history'
   const hideLayout = location.pathname === '/orders' || location.pathname === '/history';
 
   return (
-    <div className="row">
-      {/* Conditionally render Sidebar */}
+    <div style={{ display: 'flex' }}>
+  
       {!hideLayout && (
-        <div className="col-2 p-0">
-          <Sidebar />
+        <div
+          style={{
+            width: issidebarcollapsed ? '0%' : '15%',
+            transition: '',
+            minHeight: '100vh', // Ensures the sidebar takes up the full height
+            overflow: 'hidden',  // Prevents content overflow when collapsed
+          }}
+        >
+          <Sidebar isCollapsed={issidebarcollapsed} />
         </div>
       )}
-      
-      <div className={hideLayout ? 'col-12 p-0' : 'col-10 p-0'}>
-        {/* Conditionally render Navbar */}
-        {!hideLayout && <Navbar />}
+
+      <div
+        style={{
+          width: hideLayout ? '100%' : issidebarcollapsed ? '100%' : '85%',
+          
+        }}
+      >
+
+        {!hideLayout && <Navbar onToggleSidebar={toggleSidebar} />}
         
-        {/* This is where child routes will be rendered */}
+     
         <Outlet />
         
-        {/* Conditionally render Footer */}
+   
         {!hideLayout && <Footer />}
-        
       </div>
     </div>
   );

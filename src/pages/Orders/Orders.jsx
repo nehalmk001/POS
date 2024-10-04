@@ -5,12 +5,31 @@ import Table from '../../Components/Table/Table';
 import orders from '../../assets/order.jpg';
 import { IoIosSearch } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
-import { FaPlus, FaMinus, FaHome } from "react-icons/fa";
-import Navtabs from '../../Components/Navtabs/Navtabs';
-import { Link, NavLink } from 'react-router-dom';
+import { FaPlus, FaMinus, FaCalculator } from "react-icons/fa";
 import { FaFilter } from "react-icons/fa";
+import Calculator from '../../components/Calculator/Calculator';
+
+import { Link } from 'react-router-dom';
+import { AiFillHome } from 'react-icons/ai';
+import Navtabs from "../../components/Navtabs/Navtabs"
+
 
 const Orders = () => {
+
+  // dropdown calculator
+
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!isDropdownOpen); // Toggle the dropdown state
+  };
+
+
+
+
+
+
+
   const headers = [
     { label: 'ID', key: 'id', width: '100px' },
     { label: 'Image', key: 'imageUrl', width: '1fr', render: (imageUrl) => <img src={imageUrl} alt="Product" style={{ width: '50px', height: '50px' }} /> },
@@ -132,6 +151,17 @@ const Orders = () => {
     }
     // Add more data if needed
   ];
+
+
+    // search fuction
+
+    const [searchTerm, setsearchTerm] = useState('');
+
+    const filtereddata =data.filter(item=>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+
+    
   
   const [selectedProduct, setSelectedProduct] = useState([]);
 
@@ -173,32 +203,57 @@ const Orders = () => {
   };
 
   return (
-    <div className='order-main'>
+    <div className='order-main pt-2'>
       {/* Navbar and Sidebar are commented out */}
       {/* <Navbar /> */}
-      <div className='row'>
-  <div className='col-11'>
+      <div className='row d-flex justify-content-between '>
+  <div className='col-9'>
     <Navtabs />
   </div>
-  <div className='col home d-flex justify-content-center align-items-center p-0 m-0'><Link to="/" >
-      <FaHome size={20} />
-    </Link></div>
+
+
+  <div className=" col-2 dropdown-calcu">
+          <button
+            className="btn btn-secondary dropdown-toggle calcu-btn d-flex align-center justify-items-between"
+            type="button"
+            onClick={toggleDropdown} // Toggle the dropdown when button is clicked
+          >
+            <FaCalculator size={16}/><p className='mb-0 ms-2'>Calculator</p>
+           
+          </button>
+          <div
+            className={`dropdown-menu ${isDropdownOpen ? 'show' : ''}`}
+            aria-labelledby="dropdownMenuButton"
+          >
+            <Calculator />
+          </div>
+        </div>
+        
+  <div className='col home d-flex justify-content-center align-items-center'>
+    <Link to="/"  style={{background:"#de982f",color:"#ffffff",padding:"5px",display:"flex", justifyContent:"center", alignItems:"center", borderRadius:"50%"}} >
+      
+      <AiFillHome size={20} />
+    </Link>
+    </div>
 </div>
+
       <div className="grid-container">
         <div className="main">
           <div className="search-box d-flex align-items-start">
             <div className="search-container">
-              <input
+            <input
                 type="text"
                 className="search-input"
                 placeholder="Search your Products"
+                value={searchTerm}
+                onChange={(e)=>setsearchTerm(e.target.value)}
               />
               <div className="search-icon"><IoIosSearch size={20} /></div>
             </div>
             <div className='filter-icon ms-3 '><FaFilter size={25} className='mt-1' /></div>
           </div>
           <div className="table-wrapper">
-            <Table headers={headers} data={data} onRowClick={handleRowClick} />
+            <Table headers={headers} data={filtereddata} onRowClick={handleRowClick} />
           </div>
         </div>
 
