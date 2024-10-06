@@ -8,10 +8,12 @@
     font-weight: bold;
     background-color: #2bc46e;
 }
-
+.main{
+    height: 100vh;
+}
 .btn-action{
     width: fit-content;
-    background-color: #2bc46e;
+
     margin-bottom: 2px;
     padding: 2px;
     font-size: 14px;

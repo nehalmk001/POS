@@ -1,7 +1,10 @@
 /* footer */
 
 .footer{
-    background-color: #f7f8fc; /* Background color */
-    text-align: center;
-  }
-  
+  background-color: #f7f8fc; /* Background color */
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+}
