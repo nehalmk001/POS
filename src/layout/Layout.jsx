@@ -19,35 +19,34 @@ const Layout = () => {
   const hideLayout = location.pathname === '/orders' || location.pathname === '/history';
 
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex',height:'100vh' }}>
   
       {!hideLayout && (
-        <div
-          style={{
-            width: issidebarcollapsed ? '0%' : '15%',
-            transition: '',
-            minHeight: '100vh', // Ensures the sidebar takes up the full height
-            overflow: 'hidden',  // Prevents content overflow when collapsed
-          }}
-        >
+       <div
+       style={{
+         width: issidebarcollapsed ? '0%' : '15%', // Adjust this based on whether the sidebar is collapsed
+         
+       }}
+     >
+     
           <Sidebar isCollapsed={issidebarcollapsed} />
         </div>
       )}
 
       <div
         style={{
-          width: hideLayout ? '100%' : issidebarcollapsed ? '100%' : '85%',
-          
+          width: hideLayout ? '100%' : issidebarcollapsed ? '100vw' : '85%',
+          overflowX:'hidden'
         }}
       >
 
-        {!hideLayout && <Navbar onToggleSidebar={toggleSidebar} />}
+        {!hideLayout && <Navbar onToggleSidebar={toggleSidebar} isCollapsed={issidebarcollapsed} />}
         
      
         <Outlet />
         
    
-        {!hideLayout && <Footer />}
+        {!hideLayout && <Footer isCollapsed={issidebarcollapsed} />}
       </div>
     </div>
   );

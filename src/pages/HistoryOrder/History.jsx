@@ -42,20 +42,18 @@ const History = () => {
 
   const historyData = [
     { custId: 'C001', date: '2024-10-04', product: 'Laptop', quantity: 2, price: '$2400', invoiceId: 'INV1001', paymentMode: 'Credit Card', status: 'Completed' },
-    { custId: 'C001', date: '2024-9-04', product: 'mobile', quantity: 2, price: '$2400', invoiceId: 'INV1001', paymentMode: 'Credit Card', status: 'Completed' },
+    { custId: 'C001', date: '2023-9-04', product: 'mobile', quantity: 2, price: '$2400', invoiceId: 'INV1001', paymentMode: 'Credit Card', status: 'Completed' },
     { custId: 'C001', date: '2024-8-26', product: 'mobile', quantity: 2, price: '$2400', invoiceId: 'INV1001', paymentMode: 'Credit Card', status: 'Completed' },
-    { custId: 'C001', date: '2024-10-04', product: 'mobile', quantity: 2, price: '$2400', invoiceId: 'INV1001', paymentMode: 'Credit Card', status: 'Completed' },
-    { custId: 'C001', date: '2024-2-04', product: 'mobile', quantity: 2, price: '$2400', invoiceId: 'INV1001', paymentMode: 'Credit Card', status: 'Completed' },
-    { custId: 'C001', date: '2023-1-04', product: 'mobile', quantity: 2, price: '$2400', invoiceId: 'INV1001', paymentMode: 'Credit Card', status: 'Completed' },
-    { custId: 'C001', date: '2024-10-04', product: 'mobile', quantity: 2, price: '$2400', invoiceId: 'INV1001', paymentMode: 'Credit Card', status: 'Completed' },
-    { custId: 'C001', date: '2023-10-04', product: 'mobile', quantity: 2, price: '$2400', invoiceId: 'INV1001', paymentMode: 'Credit Card', status: 'Completed' },
+    { custId: 'C001', date: '2023-7-04', product: 'mobile', quantity: 2, price: '$2400', invoiceId: 'INV1001', paymentMode: 'Credit Card', status: 'Completed' },
+    { custId: 'C001', date: '2024-6-04', product: 'mobile', quantity: 2, price: '$2400', invoiceId: 'INV1001', paymentMode: 'Credit Card', status: 'Completed' },
+    { custId: 'C001', date: '2023-5-04', product: 'mobile', quantity: 2, price: '$2400', invoiceId: 'INV1001', paymentMode: 'Credit Card', status: 'Completed' },
+    { custId: 'C001', date: '2023-4-04', product: 'mobile', quantity: 2, price: '$2400', invoiceId: 'INV1001', paymentMode: 'Credit Card', status: 'Completed' },
+    { custId: 'C001', date: '2023-12-04', product: 'mobile', quantity: 2, price: '$2400', invoiceId: 'INV1001', paymentMode: 'Credit Card', status: 'Completed' },
   ];
 
   const historyCategories = [
-    { label: 'All', value: 'All' },
-    { label: 'Today', value: 'Today' },
-    { label: 'Last Month', value: 'Last Month' },
-    { label: 'Year', value: 'Year' }
+    { label: 'older', value: 'Sort By Date older' },
+    { label: 'latest', value: 'Sort By Date latest' },
   ];
 
   const filteredData = historyData.filter(item =>
@@ -63,8 +61,14 @@ const History = () => {
   );
 
   const sortedData = [...filteredData].sort((a, b) => {
-    if (selectedSort === 'Sort By Date') {
-      return new Date(b.date) - new Date(a.date); // Sort by date descending
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+  
+    if (selectedSort === 'Sort By Date older') {
+      return dateA - dateB; // Sort by date ascending
+    }
+    if (selectedSort === 'Sort By Date latest') {
+      return dateB - dateA; // Sort by date descending
     }
     return 0; // No sorting applied for other options
   });

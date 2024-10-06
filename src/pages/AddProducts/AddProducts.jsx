@@ -136,7 +136,7 @@ const AddProducts = () => {
     
   return (
    
-      <div className="main w-100 p-4">
+      <div className="main w-100 p-4" style={{marginTop:'50px'}}>
           <div className="search-box d-flex align-items-start">
             <button className='add-pdt'>Add Items</button>
             <div className="search-container">

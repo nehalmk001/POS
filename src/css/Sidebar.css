@@ -30,8 +30,12 @@
 
 #sidebar {
   background:#ffffff;
-  transition: all 0.5s ease;
-  height: 100vh;
+  margin: 0; /* Ensure no margin */
+    padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15%;
 }
 
 #sidebar .side-link li{
@@ -148,6 +152,10 @@
 }
 
 
+#sidebar.collapsed {
+  width: 0; /* Ensure width is 0 when collapsed */
+  overflow: hidden; /* Hide any overflow */
+}
 
 
 

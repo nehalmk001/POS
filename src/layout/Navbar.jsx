@@ -7,7 +7,7 @@ import { IoMdSearch } from "react-icons/io";
 
 
 
-const Navbar = ({onToggleSidebar}) => {
+const Navbar = ({ onToggleSidebar, isCollapsed }) => {
 
   useEffect(() => {
     // Initialize all tooltips on the page
@@ -20,7 +20,7 @@ const Navbar = ({onToggleSidebar}) => {
   return (
    
 
-<nav className="navbar navbar-expand-lg">
+    <nav className="navbar navbar-expand-lg" style={{ width: isCollapsed ? '100%' : '85%' }}>
       <div className="container-fluid nav-content">
         <button onClick={onToggleSidebar} className="navbar-brand" id="navbar-brand">
         <TiThMenu />      
