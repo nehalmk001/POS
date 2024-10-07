@@ -4,10 +4,11 @@ import Table from '../../Components/Table/Table';
 import { IoIosSearch } from 'react-icons/io';
 import Navtabs from "../../components/Navtabs/Navtabs";
 import { Link } from 'react-router-dom';
-import { FaCalculator, FaEye, FaRegFileExcel } from 'react-icons/fa';
+import { FaCalculator, FaEye, FaRegFileExcel, FaShoppingCart } from 'react-icons/fa';
 import Calculator from '../../components/Calculator/Calculator';
 import { AiFillHome } from 'react-icons/ai';
 import Dropdowns from '../../Components/Dropdown/Dropdown';
+import { MdHistory } from 'react-icons/md';
 
 const History = () => {
 
@@ -19,7 +20,11 @@ const History = () => {
     });
   }, []);
 
-
+  const navtablabel = [
+    { label: "Orders", key: 'orders', path: '/orders', icon:<FaShoppingCart /> },
+    { label: 'History', key: 'history', path: '/history',icon:<MdHistory />  }
+  ];
+  
 
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
@@ -88,7 +93,7 @@ const History = () => {
     <div>
       <div className='tab-header row d-flex justify-content-between pt-2'>
         <div className='col-9'>
-          <Navtabs />
+          <Navtabs links={navtablabel}/>
         </div>
 
         <div className="col-2 dropdown-calcu">

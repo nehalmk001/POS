@@ -33,7 +33,7 @@ const Sidebar = ({isCollapsed}) => {
         </Link>
       </li>
       <li>
-        <Link to='/add-products' style={{ textDecoration: "none" }} >
+        <Link to='/itemlist' style={{ textDecoration: "none" }} >
           <span>
             {/*sidebar 2 link*/}
             <MdDashboard />
