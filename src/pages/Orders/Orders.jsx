@@ -177,9 +177,9 @@ const Orders = () => {
   };
 
   return (
-    <div className='order-main pt-2'>
+    <div className='order-main'>
     
-      <div className='row d-flex justify-content-between '>
+      <div className='tab-header row d-flex justify-content-between pt-2'>
   <div className='col-9'>
     <Navtabs />
   </div>

@@ -10,6 +10,7 @@
 }
 
 #content {
+    height: 100vh;
     padding: 20px;      /* Padding for content */
     background-color: #f7f8fc; /* Background color */
     transition: all 0.5s ease;
@@ -371,7 +372,6 @@
     display: flex; /* Use flex for cells */
     align-items: flex-start; 
     justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
     text-align: center; /* Ensure text is centered */
   }
   
