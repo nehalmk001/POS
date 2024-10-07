@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../css/History.css';
 import Table from '../../Components/Table/Table';
 import { IoIosSearch } from 'react-icons/io';
@@ -10,6 +10,17 @@ import { AiFillHome } from 'react-icons/ai';
 import Dropdowns from '../../Components/Dropdown/Dropdown';
 
 const History = () => {
+
+  useEffect(() => {
+    // Initialize all tooltips on the page
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+     tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+      new window.bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  }, []);
+
+
+
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedInvoice, setSelectedInvoice] = useState(null);
@@ -30,7 +41,7 @@ const History = () => {
       render: (invoiceId, row) => (
         <div className='d-flex'>
           {invoiceId}
-          <div>
+          <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="view">
             <FaEye style={{ cursor: 'pointer' }} onClick={() => setSelectedInvoice(row)} />
           </div>
         </div>
@@ -74,8 +85,8 @@ const History = () => {
   });
 
   return (
-    <div className='pt-2'>
-      <div className='row d-flex justify-content-between'>
+    <div>
+      <div className='tab-header row d-flex justify-content-between pt-2'>
         <div className='col-9'>
           <Navtabs />
         </div>
@@ -120,7 +131,9 @@ const History = () => {
                 title={selectedSort} 
               />
             </div>
-            <div className='excel-icon d-flex align-items-center ms-2'><FaRegFileExcel size={25} /></div>
+            <div className='excel-icon d-flex align-items-center ms-2' data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Export To Excel">
+              <FaRegFileExcel size={25} style={{ cursor: 'pointer' }} />
+            </div>
             
           </div>
 
