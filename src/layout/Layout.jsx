@@ -36,7 +36,7 @@ const Layout = () => {
       <div
         style={{
           width: hideLayout ? '100%' : issidebarcollapsed ? '100vw' : '85%',
-          overflowX:'hidden'
+          overflowX:'hidden',backgroundColor:'#f7f8fc'
         }}
       >
 
