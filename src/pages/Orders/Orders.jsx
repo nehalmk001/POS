@@ -5,7 +5,7 @@ import Table from '../../Components/Table/Table';
 import orders from '../../assets/order.jpg';
 import { IoIosSearch } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
-import { FaPlus, FaMinus, FaCalculator } from "react-icons/fa";
+import { FaPlus, FaMinus, FaCalculator, FaShoppingCart } from "react-icons/fa";
 
 import Calculator from '../../components/Calculator/Calculator';
 
@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom';
 import { AiFillHome } from 'react-icons/ai';
 import Navtabs from "../../components/Navtabs/Navtabs"
 import Dropdowns from '../../Components/Dropdown/Dropdown';
+import { MdHistory } from 'react-icons/md';
 
 
 const Orders = () => {
@@ -27,7 +28,10 @@ const Orders = () => {
   };
 
 
-
+  const navtablabel = [
+    { label: "Orders", key: 'orders', path: '/orders', icon:<FaShoppingCart /> },
+    { label: 'History', key: 'history', path: '/history',icon:<MdHistory />  }
+  ];
   
 
 
@@ -181,7 +185,7 @@ const Orders = () => {
     
       <div className='tab-header row d-flex justify-content-between pt-2'>
   <div className='col-9'>
-    <Navtabs />
+    <Navtabs links={navtablabel} />
   </div>
 
 

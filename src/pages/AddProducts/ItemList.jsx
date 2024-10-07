@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 
 import Dropdowns from '../../Components/Dropdown/Dropdown'
 import Table from '../../Components/Table/Table'
-import { IoIosSearch, IoMdClose } from 'react-icons/io'
+import { IoIosAddCircle, IoIosSearch, IoMdClose } from 'react-icons/io'
 import '../../css/addProducts.css'
 import { MdDeleteOutline } from 'react-icons/md'
 import { FaRegEdit } from 'react-icons/fa'
+import { RiAlignItemBottomFill } from 'react-icons/ri'
+import Navtabs from '../../components/Navtabs/Navtabs'
 
-const AddProducts = () => {
+const ItemList = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [selectedSort, setSelectedSort] = useState('Sort By');
 
@@ -17,7 +19,10 @@ const AddProducts = () => {
 
 
 
-  
+  const navtabslabels = [
+    { label: "Item List", key: 'itemlist', path: '/itemlist', icon:<RiAlignItemBottomFill /> },
+        { label: 'Add Item', key: 'additem', path: '/additem',icon:<IoIosAddCircle /> }
+  ];
 
 
   const headers = [
@@ -136,9 +141,9 @@ const AddProducts = () => {
     
   return (
    
-      <div className="main w-100 p-4" style={{marginTop:'50px'}}>
+      <div className="main w-100 p-4" style={{marginTop:'20px'}}>
+        <Navtabs links={navtabslabels} />
           <div className="search-box d-flex align-items-start">
-            <button className='add-pdt'>Add Items</button>
             <div className="search-container">
             <input
                 type="text"
@@ -160,4 +165,4 @@ const AddProducts = () => {
   )
 }
 
-export default AddProducts
+export default ItemList
