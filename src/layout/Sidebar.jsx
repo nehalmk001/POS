@@ -19,12 +19,6 @@ const Sidebar = ({isCollapsed}) => {
   };
     
 
-  // orders dropdown
-
-  const [isOrdersOpen, setIsOrdersOpen] = useState(false); // State for managing dropdown
-
-
-
   return (
  
 
@@ -35,7 +29,7 @@ const Sidebar = ({isCollapsed}) => {
     </div>
     <ul className="list-unstyled components side-link">
       <li>
-        <Link to='/' style={{ textDecoration: "none" }} >
+        <Link to='/dashboard' style={{ textDecoration: "none" }} >
           <span>
             {/*sidebar 2 link*/}
             <MdDashboard />

@@ -105,7 +105,7 @@ const History = () => {
         </div>
 
         <div className='col home d-flex justify-content-center align-items-center'>
-          <Link to="/" style={{ background: "#de982f", color: "#ffffff", padding: "5px", display: "flex", justifyContent: "center", alignItems: "center", borderRadius: "50%" }}>
+          <Link to="/dashboard" style={{ background: "#de982f", color: "#ffffff", padding: "5px", display: "flex", justifyContent: "center", alignItems: "center", borderRadius: "50%" }}>
             <AiFillHome size={20} />
           </Link>
         </div>
