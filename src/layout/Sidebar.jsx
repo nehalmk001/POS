@@ -56,7 +56,7 @@ const Sidebar = ({isCollapsed}) => {
         </a>
         <ul className={`collapse list-unstyled ${isProductsOpen ? 'show' : ''}`} id="productsMenu">
         <li>
-            <Link to='/add-products' style={{ fontSize: "1em", display:"flex"}} href="#">
+            <Link to='/itempage' style={{ fontSize: "1em", display:"flex"}} href="#">
               <span style={{paddingLeft:"10%"}}>
               <IoMdAddCircle />
               </span>

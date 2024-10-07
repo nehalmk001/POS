@@ -1,0 +1,58 @@
+.form-wrapper{
+    height: 330px;
+    padding: 40px;
+    border: 1px solid #2bc46e;
+    margin-top: 20px;
+    background-color: #ffffff;  
+}
+
+.form-wrapper label{
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.quantity-input input, 
+.name-input input,
+.price-input input,
+.category-input select,
+.brand-input input{
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+.category-input select{
+    background: white;
+}
+
+
+
+.add-items-btn{
+    background-color: green;
+    color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* For Firefox */
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+.add-items-btn:active {
+    transform: scale(0.95); /* Scale down the add-items-btn on click */
+    background-color: #0056b3; /* Darker shade for active state */
+  }
+  
+  .add-items-btn:focus {
+    outline: none; /* Remove default focus outline */
+    background-color: #2bc46e;
+  }

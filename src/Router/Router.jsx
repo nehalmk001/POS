@@ -3,9 +3,9 @@ import Orders from '../pages/Orders/Orders'
 import Dashboard from '../pages/Dashboard/Dashboard'
 import History from '../pages/HistoryOrder/History'
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import AddProducts from '../pages/AddProducts/AddProducts'
-
 import Layout from '../layout/Layout'
+import ItemPage from '../pages/AddProducts/ItemPage'
+import AddItempage from '../pages/AddProducts/AddItempage'
 const Router = () => {
   return (
     <div>
@@ -15,7 +15,8 @@ const Router = () => {
           <Route path="/" element={<Dashboard />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/history" element={<History />} />
-          <Route path="/add-products" element={<AddProducts />} />
+          <Route path="/itempage" element={<ItemPage />} />
+          <Route path="/addItempage" element={<AddItempage />} />
         </Route>
       </Routes>
     </BrowserRouter>

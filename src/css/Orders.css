@@ -314,13 +314,9 @@
         border: none; /* Remove borders from individual links */
       }
       
-      .nav-tabs .nav-link.active {
-        border: none !important; /* Ensure the active tab doesn't have a border */
-      }
+    
       
-      .custom-active {
-        border-bottom: none !important; /* Ensure custom active class doesn't show a border */
-      }
+     
 
 
 
@@ -393,4 +389,10 @@
     color: black;
     border: none;
     box-shadow: none; /* Remove any focus shadows */
+}
+
+.custom-active{
+    background-color: #0bba63;
+    color: white;
+    border-bottom: 4px solid #0bba63!important;
 }
