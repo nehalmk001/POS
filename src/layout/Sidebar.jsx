@@ -60,14 +60,14 @@ const Sidebar = ({isCollapsed}) => {
               <span style={{paddingLeft:"10%"}}>
               <IoMdAddCircle />
               </span>
-             {!isCollapsed && 'add new'}
+             {!isCollapsed && 'Add New'}
               
             </Link>
           </li>
         </ul>
       </li>
-      <li className="active orders-sub">
-        <Link to="/orders" className='d-flex' style={{ textDecoration: "none" }}  id="ordersDropdown" >
+      <li className="active ">
+        <Link to="/orders" className='d-flex' style={{ textDecoration: "none" }} >
           <span>
           <FaShoppingCart />
           </span>

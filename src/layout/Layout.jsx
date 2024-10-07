@@ -29,7 +29,7 @@ const Layout = () => {
        }}
      >
      
-          <Sidebar isCollapsed={issidebarcollapsed} />
+          <Sidebar isCollapsed={issidebarcollapsed}/>
         </div>
       )}
 

@@ -3,13 +3,13 @@
     padding: 0;
     box-sizing: border-box;
     }
-    /* .tab-header{
+    .tab-header{
       background-color: #ffffff;
-      width: 100%;
+      /* width: 100%;
       position: fixed;
       z-index: 999;
-      top: 0;
-  } */
+      top: 0; */
+  }
     
     .grid-container {
       /* margin-top: 45px; */
