@@ -4,6 +4,8 @@ import { TiThMenu } from "react-icons/ti";
 import { FaBell } from "react-icons/fa";
 import profileImg from "../assets/profile.png"
 import { IoMdSearch } from "react-icons/io";
+import { Link } from 'react-router-dom';
+import { MdLogout } from 'react-icons/md';
 
 
 
@@ -56,10 +58,18 @@ const Navbar = ({ onToggleSidebar, isCollapsed }) => {
           <FaBell />
             </button>
         </div>
-          <div className="avatar me-3 bell-icon me-3 nav-icons">
-            <img style={{width: "30px", height: "30px"}} src={profileImg} data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="profile">
-            </img>
-          </div>
+          <div className="avatar me-3 bell-icon me-3 nav-icons dropdown">
+        <a href="#" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          <img 
+            style={{ width: "30px", height: "30px" }} 
+            src={profileImg} 
+            alt="Profile" 
+          />
+        </a>
+        <ul className="dropdown-menu dropdown-menu-end" style={{marginRight:'10px',background:'#dedee3'}} >
+          <li style={{textAlign:'center',padding:'0'}} ><Link to='/' className="dropdown-logout" href="#" style={{textDecoration:'none'}}><MdLogout style={{marginRight:'5px'}} />Logout</Link></li>
+        </ul>
+         </div>
         </div>
         </div>
     </nav>
