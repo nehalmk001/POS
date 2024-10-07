@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import "../css/Sidebar.css"
 import { FaHistory } from "react-icons/fa";
 import { IoMdArrowDropdown } from "react-icons/io";
@@ -11,12 +11,7 @@ import { Link } from 'react-router-dom';
 const Sidebar = ({isCollapsed}) => {
 
   // product dropdown
-  const [isProductsOpen, setIsProductsOpen] = useState(false); // State for managing dropdown
 
-  const toggleProducts = (event) => {
-    event.preventDefault(); // Prevent default anchor behavior
-    setIsProductsOpen(!isProductsOpen); // Toggle the dropdown
-  };
     
 
   return (
@@ -37,28 +32,14 @@ const Sidebar = ({isCollapsed}) => {
           {!isCollapsed && 'Dashboard'}
         </Link>
       </li>
-      <li className="active product-sub">
-        <a className='d-flex' style={{ textDecoration: "none" }} href="#" id="productsDropdown" onClick={toggleProducts}>
+      <li>
+        <Link to='/add-products' style={{ textDecoration: "none" }} >
           <span>
-          <FaShoppingCart />
+            {/*sidebar 2 link*/}
+            <MdDashboard />
           </span>
           {!isCollapsed && 'Product'}
-          <div>
-            <IoMdArrowDropdown className={`dropdownicon ${isProductsOpen ? 'rotate' : ''}`} />
-            </div>
-
-        </a>
-        <ul className={`collapse list-unstyled ${isProductsOpen ? 'show' : ''}`} id="productsMenu">
-        <li>
-            <Link to='/add-products' style={{ fontSize: "1em", display:"flex"}} href="#">
-              <span style={{paddingLeft:"10%"}}>
-              <IoMdAddCircle />
-              </span>
-             {!isCollapsed && 'Add New'}
-              
-            </Link>
-          </li>
-        </ul>
+        </Link>
       </li>
       <li className="active ">
         <Link to="/orders" className='d-flex' style={{ textDecoration: "none" }} >
