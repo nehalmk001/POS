@@ -141,7 +141,7 @@ const ItemList = () => {
     
   return (
    
-      <div className="main w-100 p-4" style={{marginTop:'20px'}}>
+      <div className="main w-100 p-4" style={{marginTop:'28px'}}>
         <Navtabs links={navtabslabels} />
           <div className="search-box d-flex align-items-start">
             <div className="search-container">

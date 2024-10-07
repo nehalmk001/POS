@@ -303,21 +303,19 @@
       }
 
 
-      .nav-tabs {
-        border-bottom: none; /* Remove bottom border of the entire Nav */
+      /* .nav-tabs {
+        border-bottom: none; 
       }
       
       .nav-tabs .nav-link {
-        border: none; /* Remove borders from individual links */
+        border: none; 
       }
       
       .nav-tabs .nav-link.active {
-        border: none !important; /* Ensure the active tab doesn't have a border */
-      }
+        border: none !important; 
+      } */
       
-      .custom-active {
-        border-bottom: none !important; /* Ensure custom active class doesn't show a border */
-      }
+      
 
 
 

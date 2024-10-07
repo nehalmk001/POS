@@ -11,7 +11,7 @@ const AddItempage = () => {
         { label: 'Add Item', key: 'additem', path: '/additem',icon:<IoIosAddCircle /> }
       ];
   return (
-    <div className="main w-100 p-4" style={{marginTop:'20px'}}>
+    <div className="main w-100 p-4" style={{marginTop:'28px'}}>
     <Navtabs links={navtabslabels} />
     <div className='form-wrapper'>
 <div className='row mb-4 form-body'>
