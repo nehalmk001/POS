@@ -67,7 +67,7 @@ const Navbar = ({ onToggleSidebar, isCollapsed }) => {
           />
         </a>
         <ul className="dropdown-menu dropdown-menu-end" style={{marginRight:'10px',background:'#dedee3'}} >
-          <li style={{textAlign:'center',padding:'0'}} ><Link to='/' className="dropdown-logout" href="#" style={{textDecoration:'none'}}><MdLogout style={{marginRight:'5px'}} />Logout</Link></li>
+          <li style={{textAlign:'center',padding:'0'}} ><Link to='/' className="dropdown-logout" href="#" style={{textDecoration:'none',color:'red'}}><MdLogout style={{marginRight:'5px'}} />Logout</Link></li>
         </ul>
          </div>
         </div>
