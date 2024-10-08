@@ -6,7 +6,7 @@ function Dropdowns({ category, onSelectCategory, title }) {
     
     
     return (
-        <Dropdown>
+        <Dropdown className='drops'>
             <Dropdown.Toggle variant="success" id="dropdown-basic">
                 {title}
             </Dropdown.Toggle>

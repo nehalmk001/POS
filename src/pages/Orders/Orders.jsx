@@ -5,7 +5,7 @@ import Table from '../../Components/Table/Table';
 import orders from '../../assets/order.jpg';
 import { IoIosSearch } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
-import { FaPlus, FaMinus, FaCalculator, FaShoppingCart } from "react-icons/fa";
+import { FaPlus, FaMinus, FaCalculator, FaShoppingCart, FaFilter } from "react-icons/fa";
 
 import Calculator from '../../components/Calculator/Calculator';
 
@@ -21,11 +21,13 @@ const Orders = () => {
   // dropdown calculator
 
   const [isDropdownOpen, setDropdownOpen] = useState(false);
-  const [selectedSort, setSelectedSort] = useState('Sort By');
+
+  // const [selectedSort, setSelectedSort] = useState(<FaFilter />);
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen); // Toggle the dropdown state
-  };
+};
+
 
 
   const navtablabel = [
@@ -189,25 +191,25 @@ const Orders = () => {
   </div>
 
 
-  <div className=" col-2 dropdown-calcu">
-          <button
-            className="btn btn-secondary dropdown-toggle calcu-btn d-flex align-center justify-items-between"
-            type="button"
-            onClick={toggleDropdown} // Toggle the dropdown when button is clicked
-          >
-            <FaCalculator size={16}/><p className='mb-0 ms-2'>Calculator</p>
-           
-          </button>
-          <div
-            className={`dropdown-menu ${isDropdownOpen ? 'show' : ''}`}
-            aria-labelledby="dropdownMenuButton"
-          >
-            <Calculator />
-          </div>
-        </div>
+  <div className="col-2 dropdown-calcu">
+    <button
+        className="btn btn-secondary dropdown-toggle calcu-btn d-flex align-center justify-items-between"
+        type="button"
+        onClick={toggleDropdown} // Toggle the dropdown when button is clicked
+    >
+        <FaCalculator size={16}/><p className='mb-0 ms-2'>Calculator</p>
+    </button>
+    <div
+        className={`dropdown-menus ${isDropdownOpen ? 'show' : ''}`}
+        aria-labelledby="dropdownMenuButton"
+    >
+        <Calculator />
+    </div>
+</div>
+
         
-  <div className='col home d-flex justify-content-center align-items-center'>
-    <Link to="/dashboard"  style={{background:"#de982f",color:"#ffffff",padding:"5px",display:"flex", justifyContent:"center", alignItems:"center", borderRadius:"50%"}} >
+  <div className='col home d-flex justify-content-center align-items-center p-0'>
+    <Link to="/dashboard"  style={{background:"#de982f",color:"#ffffff",padding:"5px",display:"flex", justifyContent:"center", alignItems:"center", borderRadius:"50%",marginTop:'-12px'}} >
       
       <AiFillHome size={20} />
     </Link>
@@ -228,7 +230,7 @@ const Orders = () => {
               <div className="search-icon"><IoIosSearch size={20} /></div>
             </div>
 
-           <div className='sort-div ms-2'>  <Dropdowns category={dropdownCategories} onSelectCategory={handleSelectCategory} title={selectedSort} /></div>
+           <div className='sort-div ms-2'>  <Dropdowns category={dropdownCategories} onSelectCategory={handleSelectCategory} title={<FaFilter />} /></div>
           </div>
           <div className="table-wrapper">
             <Table headers={headers} data={filtereddata} onRowClick={handleRowClick}  />
