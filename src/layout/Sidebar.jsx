@@ -14,6 +14,7 @@ const Sidebar = ({ isCollapsed }) => {
       case '/dashboard':
         return 1;
       case '/itemlist':
+      case  '/additem':
         return 2;
       case '/orders':
         return 3;
