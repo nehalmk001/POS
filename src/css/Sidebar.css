@@ -66,9 +66,6 @@
     padding-left: 10%;
 }
 
-/* #sidebar.active{               
-    margin-left: -200px;
-} */
 
 
   .side-link .collapse li {
@@ -89,52 +86,45 @@
   }
   
   /* Hover effect for the orders */
-  #ordersDropdown:hover, #ordersDropdown.active {
+  /* #ordersDropdown:hover{
     background-color: #ebfaf1!important;
       transition: 0.5s;
       color: #2bc46e !important ;
       border-left-color: #2bc46e ;
-  }
+  } */
   
   /* Initially hidden dropdown */
-  #ordersMenu {
+  /* #ordersMenu {
     height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: height 0.5s ease, opacity 0.5s ease !important;
-  }
+  } */
   
   
   #ordersMenu.show {
     height: auto;
     opacity: 1;
-    transition: 0.5s; 
   }
 
 
 
   
   /* Hover effect for the Product */
-  #productsDropdown:hover, #productsDropdown.active {
-    background-color: #ebfaf1!important;
-      transition: 0.5s;
-      color: #2bc46e !important ;
-      border-left-color: #2bc46e ;
-  }
+ 
   
   /* Initially hidden dropdown */
   #productsMenu {
     height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: height 0.5s ease, opacity 0.5s ease !important;
+   
   }
   
   
   #productsMenu.show {
     height: auto;
     opacity: 1;
-    transition: 0.5s; 
+   
   }
 
 
@@ -142,14 +132,9 @@
   
   /* Default state of the dropdown icon */
 .dropdownicon {
-  transition: transform 0.5s ease; /* **Smooth transition for rotation** */
   margin-left: 5px;
 }
 
-/* When the dropdown is open, rotate the icon 180 degrees */
-.dropdownicon.rotate {
-  transform: rotate(180deg);
-}
 
 
 #sidebar.collapsed {
@@ -157,6 +142,12 @@
   overflow: hidden; /* Hide any overflow */
 }
 
+.side-link .active-item{
+  background-color: #ebfaf1!important;
+  color: #2bc46e !important ;
+  border-left: 5px solid #2bc46e ;
+  
+}
 
 
 
