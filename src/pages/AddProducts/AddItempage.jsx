@@ -17,19 +17,19 @@ const AddItempage = () => {
 <div className='row mb-4 form-body'>
     <div className='col-8 name-input'>
         <label>Product name:</label>
-        <input type="text" placeholder='Enter the products name'></input>
+        <input type="text" name="name" placeholder='Enter the products name'></input>
     </div>
     <div className='col-4 quantity-input '>
         <label>Quantity:</label>
-        <input type="number" placeholder='Enter the Quantity' ></input>
+        <input type="number" name='quantity' placeholder='Enter the Quantity' ></input>
     </div>
     </div>
     <div className='row '>
     <div className='col category-input'>
         <label>Category:</label>
         <select>
-            <option>Electronics</option>
-            <option>Home Appliance</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Home Appliance">Home Appliance</option>
             <option>Groceries</option>
         </select>
     </div>
