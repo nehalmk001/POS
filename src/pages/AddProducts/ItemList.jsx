@@ -5,7 +5,7 @@ import Table from '../../Components/Table/Table'
 import { IoIosAddCircle, IoIosSearch, IoMdClose } from 'react-icons/io'
 import '../../css/addProducts.css'
 import { MdDeleteOutline } from 'react-icons/md'
-import { FaRegEdit } from 'react-icons/fa'
+import { FaFilter, FaRegEdit } from 'react-icons/fa'
 import { RiAlignItemBottomFill } from 'react-icons/ri'
 import Navtabs from '../../components/Navtabs/Navtabs'
 
@@ -49,7 +49,7 @@ const ItemList = () => {
       key: 'action', 
       width: '1fr', 
       render: (row) => (
-        <div className='d-flex justify-content-center'>
+        <div className='d-flex '>
           <div className='btn-action' onClick={() => handleEdit(row.id)} data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Edit"><FaRegEdit /></div>
           <div  className='btn-action' onClick={() => handleDelete(row.id)} data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Delete"><MdDeleteOutline /></div>
         </div>
@@ -166,7 +166,7 @@ const ItemList = () => {
               <div className="search-icon"><IoIosSearch size={20} /></div>
             </div>
 
-           <div className='sort-div ms-2'>  <Dropdowns category={dropdownCategories} onSelectCategory={handleSelectCategory} title={selectedSort} /></div>
+           <div className='sort-div ms-2'>  <Dropdowns category={dropdownCategories} onSelectCategory={handleSelectCategory} title={<FaFilter />} /></div>
           </div>
           <div className="table-wrapper">
             <Table headers={headers} data={filtereddata} />

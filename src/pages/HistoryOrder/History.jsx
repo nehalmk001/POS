@@ -4,7 +4,7 @@ import Table from '../../Components/Table/Table';
 import { IoIosSearch } from 'react-icons/io';
 import Navtabs from "../../components/Navtabs/Navtabs";
 import { Link } from 'react-router-dom';
-import { FaCalculator, FaEye, FaRegFileExcel, FaShoppingCart } from 'react-icons/fa';
+import { FaCalculator, FaEye, FaFilter, FaRegFileExcel, FaShoppingCart } from 'react-icons/fa';
 import Calculator from '../../components/Calculator/Calculator';
 import { AiFillHome } from 'react-icons/ai';
 import Dropdowns from '../../Components/Dropdown/Dropdown';
@@ -29,7 +29,7 @@ const History = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedInvoice, setSelectedInvoice] = useState(null);
-  const [selectedSort, setSelectedSort] = useState('Sort By');
+  const [selectedSort, setSelectedSort] = useState(<FaFilter />);
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
@@ -104,13 +104,13 @@ const History = () => {
           >
             <FaCalculator size={16} /><p className='mb-0 ms-2'>Calculator</p>
           </button>
-          <div className={`dropdown-menu ${isDropdownOpen ? 'show' : ''}`} aria-labelledby="dropdownMenuButton">
+          <div className={`dropdown-menus ${isDropdownOpen ? 'show' : ''}`} aria-labelledby="dropdownMenuButton">
             <Calculator />
           </div>
         </div>
 
         <div className='col home d-flex justify-content-center align-items-center'>
-          <Link to="/dashboard" style={{ background: "#de982f", color: "#ffffff", padding: "5px", display: "flex", justifyContent: "center", alignItems: "center", borderRadius: "50%"}}>
+          <Link to="/dashboard" style={{ background: "#de982f", color: "#ffffff", padding: "5px", display: "flex", justifyContent: "center", alignItems: "center", borderRadius: "50%",marginTop:'-12px'}}>
             <AiFillHome size={20} style={{}} />
           </Link>
         </div>
@@ -133,7 +133,7 @@ const History = () => {
               <Dropdowns 
                 category={historyCategories} 
                 onSelectCategory={setSelectedSort}  // Update selectedSort on selection
-                title={selectedSort} 
+                title={<FaFilter />} 
               />
             </div>
             <div className='excel-icon d-flex align-items-center ms-2' data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Export To Excel">
