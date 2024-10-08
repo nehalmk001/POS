@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import "../css/Sidebar.css";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaBoxOpen, FaShoppingCart } from "react-icons/fa";
 import { MdDashboard, MdMessage } from "react-icons/md";
 
 const Sidebar = ({ isCollapsed }) => {
@@ -41,8 +41,8 @@ const Sidebar = ({ isCollapsed }) => {
         </li>
         <li className={activeItem === 2 ? 'active-item' : ''}>
           <Link to='/itemlist' style={{ textDecoration: "none" }}>
-            <MdDashboard />
-            {!isCollapsed && ' Product'}
+          <FaBoxOpen />
+            {!isCollapsed && ' Products'}
           </Link>
         </li>
         <li className={activeItem === 3 ? 'active-item' : ''}>
@@ -52,7 +52,7 @@ const Sidebar = ({ isCollapsed }) => {
           </Link>
         </li>
         <li className={activeItem === 4 ? 'active-item' : ''}>
-          <Link to="/messages" style={{ textDecoration: "none" }}>
+          <Link style={{ textDecoration: "none" }}>
             <MdMessage />
             {!isCollapsed && ' Messages'}
           </Link>
