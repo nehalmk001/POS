@@ -3,7 +3,7 @@ import { FaHistory, FaShoppingCart } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 
 function Navtabs({links}) {
-  console.log(links);
+  
   
   const location = useLocation(); // To track the current location
   
