@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 
 import Dropdowns from '../../Components/Dropdown/Dropdown'
 import Table from '../../Components/Table/Table'
@@ -10,6 +10,17 @@ import { RiAlignItemBottomFill } from 'react-icons/ri'
 import Navtabs from '../../components/Navtabs/Navtabs'
 
 const ItemList = () => {
+
+  
+  useEffect(() => {
+    // Initialize all tooltips on the page
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+     tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+      new window.bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  }, []);
+
+
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [selectedSort, setSelectedSort] = useState('Sort By');
 
@@ -38,9 +49,9 @@ const ItemList = () => {
       key: 'action', 
       width: '1fr', 
       render: (row) => (
-        <div>
-          <div className='btn-action' onClick={() => handleEdit(row.id)}>Edit    <FaRegEdit /></div>
-          <div  className='btn-action' onClick={() => handleDelete(row.id)}>Delete<MdDeleteOutline /></div>
+        <div className='d-flex justify-content-center'>
+          <div className='btn-action' onClick={() => handleEdit(row.id)} data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Edit"><FaRegEdit /></div>
+          <div  className='btn-action' onClick={() => handleDelete(row.id)} data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Delete"><MdDeleteOutline /></div>
         </div>
       ) 
     }
