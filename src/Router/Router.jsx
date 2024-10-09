@@ -5,15 +5,16 @@ import History from '../pages/HistoryOrder/History'
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Layout from '../layout/Layout'
 import Login from '../pages/Login/Login'
-import ItemList from '../pages/AddProducts/itemlist'
+
 import AddItempage from '../pages/AddProducts/AddItempage'
+import ItemList from '../pages/AddProducts/ItemList'
 const Router = () => {
   return (
     <div>
-      <BrowserRouter> {/* BrowserRouter instead of Router */}
+      <BrowserRouter> 
       <Routes>
       <Route path="/" element={<Login />}/>
-        <Route element={<Layout />}> {/* Layout for shared navbar/sidebar/footer */}
+        <Route element={<Layout />}> 
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/history" element={<History />} />

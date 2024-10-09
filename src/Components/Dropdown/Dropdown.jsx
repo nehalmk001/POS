@@ -1,7 +1,7 @@
 import Dropdown from 'react-bootstrap/Dropdown';
 
 function Dropdowns({ category, onSelectCategory, title }) {
-    console.log(category);
+  
    
     
     
