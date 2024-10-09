@@ -5,7 +5,7 @@ import Table from '../../Components/Table/Table';
 import orders from '../../assets/order.jpg';
 import { IoIosSearch } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
-import { FaPlus, FaMinus, FaCalculator, FaShoppingCart, FaFilter } from "react-icons/fa";
+import { FaPlus, FaMinus, FaCalculator, FaShoppingCart, FaFilter, FaRegEdit } from "react-icons/fa";
 
 import Calculator from '../../components/Calculator/Calculator';
 
@@ -44,7 +44,15 @@ const Orders = () => {
     { label: 'Category', key: 'category', width: '1fr' },
     { label: 'Quantity', key: 'quantity', width: '1fr' },
     { label: 'Brand', key: 'brand', width: '1fr' },
-    { label: 'Price', key: 'price', width: '100px', render: (price) => `$${price.toFixed(2)}` }
+    { label: 'Price', key: 'price', width: '100px', render: (price) => `$${price.toFixed(2)}` },
+    { label: 'Action', key: 'action', width: '100px', 
+      render: (row) => (
+        <div className='d-flex '>
+          <div className='btn-action' onClick={() => handleEdit(row.id)} data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Edit"><FaRegEdit /> Edit</div>
+          
+        </div>
+      ) 
+     }
   ];
   
   const data = [
@@ -223,7 +231,7 @@ const Orders = () => {
             <input
                 type="text"
                 className="search-input"
-                placeholder="Search your Products"
+                placeholder="Quick Search"
                 value={searchTerm}
                 onChange={(e)=>setsearchTerm(e.target.value)}
               />

@@ -401,35 +401,35 @@
 }
 .dropdown-menus {
     position: absolute;
-    right: 20px; /* Align to the right */
-   
+    right: 120px; /* Align to the right */
+   margin-top: 20px;
     background-color: #282c34;
     color: #61dafb;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     opacity: 0; /* Start invisible */
-    transform: translateY(100%); /* Start off-screen below */
+    /* transform: translateY(100%); */
     z-index: 1000; /* Ensure it appears above other elements */
 }
 
 .dropdown-menus.show {
-    animation: slideIn 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards; /* Add sliding animation */
+    /* animation: slideIn 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;  */
     opacity: 1;
     padding: 0px;
    
 }
 
 /* Keyframes for sliding in from the bottom */
-@keyframes slideIn {
+/* @keyframes slideIn {
     0% {
-        transform: translateY(100%); /* Start off-screen below */
+        transform: translateY(100%); 
         opacity: 0;
     }
     100% {
-        transform: translateY(0); /* End in place */
+        transform: translateY(0); 
         opacity: 1;
     }
-}
+} */
 
 .drops .dropdown-toggle::after{
     display: none;

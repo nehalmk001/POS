@@ -159,7 +159,7 @@ const ItemList = () => {
             <input
                 type="text"
                 className="search-input"
-                placeholder="Search your Products"
+                placeholder="Quick Search"
                 value={searchTerm}
                 onChange={(e)=>setsearchTerm(e.target.value)}
               />

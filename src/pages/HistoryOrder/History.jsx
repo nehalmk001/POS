@@ -123,7 +123,7 @@ const History = () => {
               <input
                 type="text"
                 className="search-input"
-                placeholder="Search your Products"
+                placeholder="Quick Search"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
