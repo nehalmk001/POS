@@ -44,8 +44,7 @@
         flex-direction: column;
         gap: 10px;
         position: relative;
-        /* grid-area: main; */
-        /* padding: 20px 50px; */
+      
     }
     
   
@@ -433,3 +432,5 @@
     background-color: #08994f;
     border-radius: 10px;
 }
+
+
