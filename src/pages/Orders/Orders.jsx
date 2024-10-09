@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../css/Orders.css';
-
+import data from '../../assets/datas/data.json'
 import Table from '../../Components/Table/Table';
 import orders from '../../assets/order.jpg';
 import { IoIosSearch } from "react-icons/io";
@@ -55,72 +55,7 @@ const Orders = () => {
      }
   ];
   
-  const data = [
-    {
-      id: '001',
-      name: 'Laptop',
-      category: 'Electronics',
-      quantity: 10,
-      brand: 'Apple',
-      price: 1200,
-      imageUrl: 'https://m.media-amazon.com/images/I/71jG+e7roXL._AC_UF1000,1000_QL80_.jpg'
-    },
-    {
-      id: '002',
-      name: 'Smartphone',
-      category: 'Electronics',
-      quantity: 20,
-      brand: 'Samsung',
-      price: 800,
-      imageUrl: 'https://img.global.news.samsung.com/in/wp-content/uploads/2022/03/SM-A536_Galaxy-A53-5G_Awesome-Peach_Front.jpg'
-    },
-    {
-      id: '003',
-      name: 'Tablet',
-      category: 'Electronics',
-      quantity: 30,
-      brand: 'Google',
-      price: 400,
-      imageUrl: 'https://images-cdn.ubuy.co.in/633b593b89c5453959017fec-google-pixel-slate-12-3-quot.jpg'
-    },
-    {
-      id: '004',
-      name: 'Basmati Rice',
-      category: 'Groceries',
-      quantity: 50,
-      brand: 'india gate',
-      price: 30,
-      imageUrl: 'https://m.media-amazon.com/images/I/91MZComV1xL.jpg'
-    },
-    {
-      id: '005',
-      name: 'Milk',
-      category: 'Groceries',
-      quantity: 40,
-      brand: 'milma',
-      price: 20,
-      imageUrl: 'https://homedelivery.ramachandran.in/media/catalog/product/cache/04c5c5c4276fe9dba74400abc896c29c/m/i/milma.jpg'
-    },
-    {
-      id: '006',
-      name: 'Microwave Oven',
-      category: 'Home Appliance',
-      quantity: 5,
-      brand: 'LG',
-      price: 300,
-      imageUrl: 'https://images.jdmagicbox.com/quickquotes/images_main/lg-microwave-oven-2-12-2022-024-272327279-7ls2ynt0.jpg'
-    },
-    {
-      id: '007',
-      name: 'Vacuum Cleaner',
-      category: 'Home Appliance',
-      quantity: 7,
-      brand: 'Dyson',
-      price: 500,
-      imageUrl: 'https://www.jiomart.com/images/product/original/rvmyn14rtm/inalsa-spruce-1200-w-vacuum-cleaner-with-blower-function-and-reusable-dust-bag-red-product-images-orvmyn14rtm-p598712841-0-202302231843.jpg?im=Resize=(420,420)'
-    }
-  ];
-  
+
 
 
     // search fuction
@@ -136,7 +71,7 @@ const Orders = () => {
   const [selectedCategory, setselectedCategory] = useState('')
 
   const handleSelectCategory = (category) => {
-    console.log("Selected Category:", category); // Log selected category
+   // Log selected category
     setselectedCategory(category);
     setSelectedSort(category); // Update title here if needed
 };
