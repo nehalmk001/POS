@@ -43,7 +43,7 @@ const Layout = () => {
         {!hideLayout && <Navbar onToggleSidebar={toggleSidebar} isCollapsed={issidebarcollapsed} />}
         
      
-        <Outlet />
+        <Outlet  />
         
    
         {!hideLayout && <Footer isCollapsed={issidebarcollapsed} />}

@@ -236,8 +236,8 @@ const Dashboard = () => {
 
           
            {/* <!-- table --> */}
-          <div className="order-list">
-             <div className="container-fluid table-content">
+          <div className="order-list ">
+             <div className="container-fluid table-content mb-5">
               <div className="table-top">
                 <div className="top-heading">
                 <h2>  Order List</h2>

@@ -10,7 +10,7 @@
 }
 
 #content {
-    height: 100vh;
+    height: 100%;
     padding: 20px;      /* Padding for content */
     background-color: #f7f8fc; /* Background color */
     transition: all 0.6s ease;
