@@ -4,10 +4,18 @@ import Sidebar from '../../layout/Sidebar'
 import Footer from '../../layout/Footer'
 import '../../css/Dashboard.css'
 import { IoMail } from "react-icons/io5";
+import { useLocation } from 'react-router-dom'
 
 const Dashboard = () => {
+  const location = useLocation();
+  const { username, showAlert } = location.state || {};
 
- 
+
+  useEffect(() => {
+    if (showAlert) {
+      alert(`Login successful! Welcome, ${username}!`); // Show the alert with the username
+    }
+  }, [showAlert, username]);
   
   return (
    
