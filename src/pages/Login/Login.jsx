@@ -38,15 +38,15 @@ const Login = () => {
   };
 
   return (
-    <div class="login-main">
-    <div class="illustration">
+    <div className="login-main">
+    <div className="illustration">
       <img src={posimage} alt="Illustration" />
     </div>
-    <div class="login-form">
-     <div class="login-wrapper">
+    <div className="login-form">
+     <div className="login-wrapper">
         <h1>Welcome To <span>LOGIN</span></h1>
-        <form class="form" onSubmit={handleLogin}>
-          <div class="input-group">
+        <form className="form" onSubmit={handleLogin}>
+          <div className="input-group">
             <label for="email">Email Address</label>
             <input type="name"
              value={username}
@@ -55,7 +55,7 @@ const Login = () => {
              // placeholder="Email" 
               />
           </div>
-          <div class="input-group">
+          <div className="input-group">
              <label for="password">Password</label> 
             <input 
            type={showPassword ? "text" : "password"} 
@@ -67,12 +67,12 @@ const Login = () => {
               {showPassword ? <IoMdEyeOff /> : <IoMdEye />}
              </span>
           </div>
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
-            <label class="form-check-label" for="flexSwitchCheckDefault">Keep me logged in</label>
+          <div className="form-check form-switch">
+            <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+            <label className="form-check-label" for="flexSwitchCheckDefault">Keep me logged in</label>
           </div>
           {error && <p style={{ color: 'red'}}>{error}</p>} 
-          <button type="submit" class="login-btn">Log in</button>
+          <button type="submit" className="login-btn">Log in</button>
         </form>
      </div>
     </div>
