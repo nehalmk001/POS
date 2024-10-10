@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../../css/Login.css';
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io'; // Import eye icons
 import { useNavigate } from 'react-router-dom';
+import posimage from '../../assets/pos-image.png';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -37,41 +38,80 @@ const Login = () => {
   };
 
   return (
-    <div className="login">
-      <div className="login-screen">
-        <div className="app-title">
-          <h1>Login</h1>
-        </div>
-        <form className="login-form" onSubmit={handleLogin}>
-          <div className="control-group">
-            <input
-              type="text"
-              className="login-field"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder="username"
-            />
-          </div>
-          <div className="control-group">
-            <input
-              type={showPassword ? "text" : "password"} // Toggle between "text" and "password"
-              className="login-field"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="password"
-            />
-            {/* Password visibility toggle icon */}
-            <span className="toggle-password" onClick={togglePasswordVisibility}>
-              {showPassword ? <IoMdEyeOff /> : <IoMdEye />}
-            </span>
-          </div>
-          {error && <p style={{ color: 'red'}}>{error}</p>} {/* Error message */}
-          <button type="submit" className="btn btn-primary btn-large btn-block">
-            Login
-          </button>
-        </form>
-      </div>
+    <div class="login-main">
+    <div class="illustration">
+      <img src={posimage} alt="Illustration" />
     </div>
+    <div class="login-form">
+     <div class="login-wrapper">
+        <h1>Welcome To <span>LOGIN</span></h1>
+        <form class="form" onSubmit={handleLogin}>
+          <div class="input-group">
+            <label for="email">Email Address</label>
+            <input type="name"
+             value={username}
+             onChange={(e) => setUsername(e.target.value)}
+             id="email"
+             // placeholder="Email" 
+              />
+          </div>
+          <div class="input-group">
+             <label for="password">Password</label> 
+            <input 
+           type={showPassword ? "text" : "password"} 
+             id="password"
+              // placeholder="Password" 
+              value={password}
+               onChange={(e) => setPassword(e.target.value)}/>
+               <span className="toggle-password" onClick={togglePasswordVisibility}>
+              {showPassword ? <IoMdEyeOff /> : <IoMdEye />}
+             </span>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+            <label class="form-check-label" for="flexSwitchCheckDefault">Keep me logged in</label>
+          </div>
+          {error && <p style={{ color: 'red'}}>{error}</p>} 
+          <button type="submit" class="login-btn">Log in</button>
+        </form>
+     </div>
+    </div>
+  </div>
+    // <div className="login">
+    //   <div className="login-screen">
+    //     <div className="app-title">
+    //       <h1>Login</h1>
+    //     </div>
+    //     <form className="login-form" onSubmit={handleLogin}>
+    //       <div className="control-group">
+    //         <input
+    //           type="text"
+    //           className="login-field"
+    //           value={username}
+    //           onChange={(e) => setUsername(e.target.value)}
+    //           placeholder="username"
+    //         />
+    //       </div>
+    //       <div className="control-group">
+    //         <input
+    //           type={showPassword ? "text" : "password"} 
+    //           className="login-field"
+    //           value={password}
+    //           onChange={(e) => setPassword(e.target.value)}
+    //           placeholder="password"
+    //         />
+         
+    //         <span className="toggle-password" onClick={togglePasswordVisibility}>
+    //           {showPassword ? <IoMdEyeOff /> : <IoMdEye />}
+    //         </span>
+    //       </div>
+    //       {error && <p style={{ color: 'red'}}>{error}</p>} 
+    //       <button type="submit" className="btn btn-primary btn-large btn-block">
+    //         Login
+    //       </button>
+    //     </form>
+    //   </div>
+    // </div>
   );
 };
 

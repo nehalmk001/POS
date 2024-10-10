@@ -49,7 +49,7 @@ const AddItempage = () => {
   };
 
   return (
-    <div className="main w-100 p-4" style={{ marginTop: '28px' }}>
+    <div className="main w-100 p-4" style={{ marginTop: '42px' }}>
       <Navtabs links={navtabslabels} />
       <form className='form-wrapper' onSubmit={handleSubmit}>
         <div className='row mb-4 form-body'>

@@ -3,7 +3,7 @@ import React, { useState,useEffect } from 'react'
 import Dropdowns from '../../Components/Dropdown/Dropdown'
 import Table from '../../Components/Table/Table'
 import { IoIosAddCircle, IoIosSearch, IoMdClose } from 'react-icons/io'
-import '../../css/addProducts.css'
+import '../../css/ItemList.css'
 import { MdDeleteOutline } from 'react-icons/md'
 import { FaFilter, FaRegEdit } from 'react-icons/fa'
 import { RiAlignItemBottomFill } from 'react-icons/ri'
@@ -89,7 +89,7 @@ const ItemList = () => {
     
   return (
    
-      <div className="main w-100 p-4" style={{marginTop:'28px'}}>
+      <div className="main w-100 p-4" style={{marginTop:'42px'}}>
         <Navtabs links={navtabslabels} />
           <div className="search-box d-flex align-items-start">
             <div className="search-container">
